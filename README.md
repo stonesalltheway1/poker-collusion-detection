@@ -13,6 +13,10 @@
   <img alt="license" src="https://img.shields.io/badge/license-MIT-lightgrey">
 </p>
 
+<p align="center">
+  <a href="https://www.kaggle.com/code/erickeller2/8th-place-detecting-coordinated-poker-pairs"><b>Read the solution write-up on Kaggle</b></a>
+</p>
+
 ---
 
 Two players at a table quietly move chips to each other. One folds the winning hand; the other raises to clear
@@ -106,7 +110,9 @@ a GPU. `run_all.py --dry-run` prints the plan without executing.
 
 | path | what |
 |---|---|
-| [`research/WRITEUP.md`](research/WRITEUP.md) | the solution write-up, with figures |
+| [the Kaggle write-up](https://www.kaggle.com/code/erickeller2/8th-place-detecting-coordinated-poker-pairs) | the published solution write-up and case reviews |
+| [`research/WRITEUP.md`](research/WRITEUP.md) | the same write-up in the repo, with figures |
+| [`notebooks/`](notebooks/) | the exact notebook published to Kaggle |
 | [`research/CASE_REVIEWS_SHORT.md`](research/CASE_REVIEWS_SHORT.md) | five worked cases: behaviour, benign alternative, and what would overturn it |
 | [`research/CASE_REVIEWS.md`](research/CASE_REVIEWS.md) | the same cases with all 25 hands replayed action by action |
 | [`research/forensics/listing_rule.md`](research/forensics/listing_rule.md) | how the evidence-listing rule was derived, in full |
