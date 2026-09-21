@@ -1,0 +1,240 @@
+<!doctype html><html><head><meta charset='utf-8'><title>Kaggle write-up body</title>
+<style>
+  body { max-width: 860px; margin: 32px auto; padding: 0 20px;
+         font-family: -apple-system, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+         font-size: 16px; line-height: 1.65; color: #16211c; }
+  h1 { font-size: 28px; margin: 34px 0 10px; line-height: 1.25; }
+  h2 { font-size: 22px; margin: 30px 0 10px; line-height: 1.3; }
+  h3 { font-size: 18px; margin: 24px 0 8px; }
+  p  { margin: 12px 0; }
+  img { max-width: 100%; height: auto; display: block; margin: 18px 0; }
+  table { border-collapse: collapse; margin: 16px 0; width: 100%; }
+  th, td { border: 1px solid #d7ddd9; padding: 7px 11px; text-align: left; font-size: 15px; }
+  th { background: #f2f5f3; }
+  code { background: #f2f5f3; padding: 1px 5px; border-radius: 3px;
+         font-family: "SFMono-Regular", Consolas, monospace; font-size: 90%; }
+  pre { background: #f2f5f3; padding: 12px 14px; border-radius: 5px; overflow-x: auto; }
+  pre code { background: none; padding: 0; }
+  hr { border: none; border-top: 1px solid #d7ddd9; margin: 28px 0; }
+  ul { margin: 12px 0; padding-left: 22px; }
+  li { margin: 7px 0; }
+  blockquote { border-left: 3px solid #c2733a; margin: 16px 0; padding: 2px 16px; color: #4a554f; }
+</style>
+</head><body>
+<p><strong>Final placement: 8th of 370 teams. Private 0.92817, public 0.91954.</strong>
+Selected submissions: <code>sub025_fusebags_exp042ramp.csv</code> (private 0.92777) and <code>sub028_famspecw15_exp042ramp.csv</code> (private 0.92817).</p>
+<p>This write-up is <strong>1,496 words</strong>. The five required case reviews follow as an appendix and are the separate required item, not counted against that limit.</p>
+<table>
+<thead>
+<tr>
+<th>required item</th>
+<th>where</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Solution write-up</td>
+<td>this page, and as a notebook: <a href="https://www.kaggle.com/code/erickeller2/8th-place-detecting-coordinated-poker-pairs">https://www.kaggle.com/code/erickeller2/8th-place-detecting-coordinated-poker-pairs</a></td>
+</tr>
+<tr>
+<td>Public code reproducing the selected submission</td>
+<td><strong><a href="https://github.com/stonesalltheway1/poker-collusion-detection">https://github.com/stonesalltheway1/poker-collusion-detection</a></strong></td>
+</tr>
+<tr>
+<td>Five case reviews</td>
+<td>the appendix below, and <a href="https://github.com/stonesalltheway1/poker-collusion-detection/blob/main/research/CASE_REVIEWS_SHORT.md">https://github.com/stonesalltheway1/poker-collusion-detection/blob/main/research/CASE_REVIEWS_SHORT.md</a></td>
+</tr>
+</tbody>
+</table>
+<p><code>src/run_all.py</code> rebuilds both selected submissions from <code>data/raw</code> in 49 stages. <code>python src/run_all.py --list</code> prints every stage and whether its output already exists; <code>--dry-run</code> prints the plan without executing. Roughly 10 to 14 hours on one machine (i5-10400F, 32 GB, GTX 1660S); set <code>XGB_DEVICE=cpu</code> to run without a GPU. Setup instructions are in the README and every package version is pinned in <code>requirements.txt</code>. The competition data is not redistributed; download it from Kaggle into <code>data/raw/</code>.</p>
+<p><strong>Rule compliance.</strong> Every feature derives from poker activity: actions, amounts, hole cards, board, and hand order within the scored period. Nothing uses ID formats, file or row ordering, generator internals, or evaluation-file membership, and no <code>players.parquet</code> metadata reaches any model. One disclosure, repeated in section 8: the evidence ranker uses chronological order inside the scored period, because the host's lists are ordered that way. The ordering key is the hand start timestamp, and there are zero tied <code>(table, timestamp)</code> groups across all 2,000,000 hands, so no identifier is ever load-bearing.</p>
+<hr />
+<p>Two findings did almost all of the work. First, a colluding pair is active <strong>only</strong> in the period it is being
+scored in, so every feature has to be computed inside that period. Second, the host's evidence list is not a
+ranking at all, it is <code>sorted(EVENTS, key=(type, hand_seq))[:5]</code>, and reconstructing that rule took evidence
+MAP@5 from 0.666 to 0.705 on the public board.</p>
+<h2>1. Read the metric before writing any code</h2>
+<p><code>score = 0.70 · pairAP + 0.20 · evidenceMAP@5 + 0.10 · behaviourMacroAP</code>: three components, three different
+problems. You can measure all three exactly by submitting copies of one scored file with a single field blanked,
+one with every evidence cell set to <code>NO_EVIDENCE</code> and one with every <code>predicted_behavior</code> set to
+<code>other_coordination</code>. Two probes and some algebra pin the decomposition to four decimals.</p>
+<p><img alt="score anatomy" src="https://raw.githubusercontent.com/stonesalltheway1/poker-collusion-detection/main/research/figures/fig5_score_anatomy.png" /></p>
+<p>One trap, which cost me two wrong versions of this table. Blanking the behaviour column does <strong>not</strong> give AP = 0.
+The host ranks tied scores with a stable sort, so an all-zero score vector is ranked in <code>pair_id</code> order and
+returns the average precision of a <em>random</em> ranking. That floor is scored <strong>per family</strong>, over roughly a third of
+the positives, so it is 0.0018 at public size, not 0.0047. Add it back or your pair AP is wrong by 0.001.</p>
+<p>Probe the model you ship: behaviour AP is risk-model dependent, so borrowing it from an older probe was off
+by 0.005.</p>
+<h2>2. Coordination is phase-local</h2>
+<p>Each table plays 5,000 hands: the first 3,000 carry the labels, the last 2,000 are scored. Take the 281 labelled
+colluding pairs sharing 38+ hands in the evaluation period and recompute the same statistics there. They collapse
+to chance.</p>
+<p><img alt="phase locality" src="https://raw.githubusercontent.com/stonesalltheway1/poker-collusion-detection/main/research/figures/fig1_phase_locality.png" /></p>
+<p>The colluding player sets of the two periods are disjoint (0 overlap against 4.5 expected by chance), and the
+correlation of our own pair scores across periods is 0.16. So a pair is scored <strong>only</strong> on hands from the period
+being judged, with the other period used purely as a clean per-player baseline. Every public notebook I read
+mixed the periods, and the best public score was 0.695.</p>
+<h2>3. The evidence list follows a rule</h2>
+<p>Evidence is 20% of the score and was my weakest component all week. The breakthrough came from reading listed
+hands against unlisted hands that looked identical. Each list is <strong>two chronologically sorted segments
+concatenated</strong>: exactly one time inversion in 91 of 91 directed-transfer lists, 11 of 11 coordinated-isolation
+lists, and 93 of 96 soft-play lists.</p>
+<p>The rule is: take every type-1 event of the period in chronological order, then the earliest type-2 events, and
+cut at 5.</p>
+<p><img alt="the listing rule" src="https://raw.githubusercontent.com/stonesalltheway1/poker-collusion-detection/main/research/figures/fig2_listing_rule.png" /></p>
+<p>Two pieces of evidence pin it down. Segment 1 sits at mean position 0.50 of the pair's timeline, so it is not
+selected by time, it is the <em>complete</em> type-1 set; segment 2 sits early, so it holds the first few type-2 events.
+And for coordinated isolation the type key is exact and mechanical: the number of players who folded before the
+pair's first preflop raise, 0 for type 1 and 1 for type 2, holding on all 460 listed hands.</p>
+<p>For directed transfer, type 1 is "the donor folds to the receiver while holding the better made hand" (221 of 236
+segment-1 hands against 32 of 213 segment-2 hands); for soft play it is the same fold-ahead (182 of 213), with
+type 2 a passive call (223 of 232). Those two types are only partly visible, since identical action strings occur
+in both segments, so I learn them (out-of-fold AUC 0.972 and 0.945) and compute the probability that a hand is
+listed with an exact Poisson-binomial dynamic program over each pair's hands. Blended 0.7 with a learned in-pair
+ranker, development MAP@5 went 0.711 to 0.775.</p>
+<h2>4. Pipeline</h2>
+<p><img alt="pipeline" src="https://raw.githubusercontent.com/stonesalltheway1/poker-collusion-detection/main/research/figures/fig3_pipeline.png" /></p>
+<p>Every hole card is visible, including folded players, so each decision can be priced exactly. Directed transfer
+shows one-way chip flow (100% of planted hands) plus a donor flat-calling the partner's raise where a label-free
+normal-play policy gives P(call) below 0.15 (pair AUC 0.993). Soft play shows a partner answering the other's
+aggression passively, with a raise-back in only 1.8% of planted hands. Coordinated isolation shows a preflop
+raise the population makes under 2% of the time in that exact spot (pair AUC 1.000).</p>
+<p><strong>Directedness beats raw rates.</strong> The strongest features compare a player's behaviour <em>with this partner</em> against
+<em>the same player with their other 28 table-mates</em>, as shrunk log-lift, excess counts and mutual-top flags. That
+removes the tilt, weak and loose personas the generator simulates: per-player fold rates span 0.42 to 0.79 where
+the population policy predicts a band of 0.61 to 0.67.</p>
+<p><strong>PU learning.</strong> Only 372 pairs are labelled positive, and the 1,488 confirmed-clean pairs are indistinguishable
+from random unlabelled pairs (AUC 0.494), so no hard-negative machinery is needed. Two self-training steps help:
+highly scored non-listed hands of positive pairs become weak positives, and ~154 unlabelled pairs carrying full
+family signatures are promoted.</p>
+<h2>5. Validation</h2>
+<p>Five folds by table, frozen on day zero: a player sits at exactly one table, so table folds share no players.
+Nothing was accepted without a paired table-bootstrap at P(better) above 0.8, then a submission that changed
+<strong>exactly one component</strong>, which is what makes the attribution below possible.</p>
+<p><img alt="attribution" src="https://raw.githubusercontent.com/stonesalltheway1/poker-collusion-detection/main/research/figures/fig4_attribution.png" /></p>
+<h2>6. What limits the score, and what I would do next</h2>
+<p>Hand the scorer the true <em>type</em> and development MAP@5 goes 0.775 to 0.793. Hand it the true <em>event</em>, meaning
+which hands the generator actually altered, and it goes to 0.932.</p>
+<p><img alt="what limits it" src="https://raw.githubusercontent.com/stonesalltheway1/poker-collusion-detection/main/research/figures/fig6_what_limits.png" /></p>
+<p>Retrieval is already solved: recall@10 is 0.970 and recall@5 is 0.820 against an AP@5 of 0.775, so our ordering
+of a retrieved set is 94.5% efficient. The entire residual is a binary discrimination over roughly ten candidate
+hands per pair, and it is genuinely latent: the generator activates a scenario and a hand counts only if the
+colluder's action actually changed, so look-alikes with the same action string, position and hand strength sit
+unlisted <em>between</em> listed hands. The best deterministic predicate reproduces a pair's exact list for only 7% to
+25% of pairs.</p>
+<p>Solving <code>0.7P + 0.2E + 0.1B</code> for third place (0.94196) against my private components: even a perfect pair ranking
+and perfect behaviour routing would still require evidence near 0.710, just below my 0.722. So the top three beat
+me on both axes, with evidence around 0.75 to 0.77 and pair AP around 0.985 to 0.990.</p>
+<h2>7. What did not work</h2>
+<ul>
+<li><strong>Six attacks on the event bit</strong>, all neutral or negative: self-trained detectors, sequence-model margins, an
+  EM step on the censored tail, player-by-situation normal-play baselines, a within-pair ranking objective, and
+  per-pair rate recalibration. Better <em>detection</em> reduces listing MAP, because better detectors also fire on
+  planted-but-unlisted hands.</li>
+<li><strong>65 label-free directed statistics</strong> hunting an undisclosed fourth mechanism, against three nulls. Documented
+  null, from an instrument that recovers the three known families at 0.30 to 0.74 recall at zero false positives.</li>
+<li><strong>A validation view that deleted the population I was scored on.</strong> My decision view excluded 137 suspected
+  hidden positives, but every evaluation positive is by construction an <em>unlabelled</em> positive. A candidate at
+  P(better) = 1.000 on that view, positive in 5 of 5 folds and replicated at a second seed, delivered
+  <strong>minus 0.00007</strong> on the leaderboard. Build the adverse view too, and ship only what wins on both.</li>
+<li><strong>An unidentified fit that closed my best lane for three days.</strong> I fitted a two-parameter transfer model to
+  three leaderboard points at RMSE 0.0006 and concluded evidence was capped. It is linear in a reparameterisation,
+  so the interesting parameter ranged from 0.065 to 0.218 at <em>identical</em> RMSE. Always state free parameters
+  against data points before letting a fit close a lane.</li>
+</ul>
+<h2>8. Rules and responsible interpretation</h2>
+<p>Every feature derives from poker activity: actions, amounts, hole cards, board, and hand order within the scored
+period. Nothing uses ID format, file or row order, or evaluation-file membership, and no player metadata reaches
+any model. <strong>Disclosure:</strong> the evidence ranker uses chronological order inside the scored period, because the
+host's lists are ordered that way. The ordering key is the hand start timestamp, and there are zero tied
+(table, timestamp) groups across all 2,000,000 hands, so no identifier is ever load-bearing.</p>
+<p>The data is synthetic and these are benchmark patterns, not accusations. Each case review gives the hand, both
+players' cards, the board, every action, the statistic that fired with its population baseline, a benign
+alternative, and the observation that would overturn the reading. A high score is a prompt for human review.</p>
+<p>Thanks to the organisers for an unusually well-designed task.</p>
+<hr />
+<h1>Appendix: the five required case reviews</h1>
+<p>Submission reviewed: <code>sub028_famspecw15_exp042ramp.csv</code> (private 0.92817). Each review gives the pair ID, the
+evidence hand IDs actually submitted, the observable in-gameplay behaviour that drove the flag, and a plausible
+benign alternative. Cases were chosen to cover all three disclosed families, because the top of the ranking is
+dominated by directed transfer and a plain top-5 would show a reviewer one pattern out of three.</p>
+<p>Two notes on method. First, <strong>the detector scores a pattern across a pair's shared hands, not any single hand.</strong>
+Every hand below has an ordinary explanation on its own; what the model keys on is how often the pattern recurs
+between these two players and not between either of them and their other 28 table-mates. Second, this dataset
+exposes every hole card, including folded players, so the "observable behaviour" below includes equities that a
+real investigator would not have. Each review therefore also states <strong>what would overturn the reading</strong>, which is
+the check a real review should run.</p>
+<p>Full hand-by-hand replays of all 25 evidence hands, with every action, pot, price and per-decision equity, are in
+<a href="CASE_REVIEWS.md"><code>CASE_REVIEWS.md</code></a>.</p>
+<hr />
+<h2>Case 1 of 5 · directed transfer · pair <code>PE4D799DCE834</code></h2>
+<p><strong>Players:</strong> <code>U1503AA4813BD</code> (A), <code>U3C54D3A546E2</code> (B) · 222 shared hands in the scored period · net A +307 bb, B −399 bb
+<strong>Evidence hands:</strong> <code>H9F6E6EAB15A72D</code>, <code>HEADF53E86AF271</code>, <code>HF745F4A26D300F</code>, <code>HEA5A04F5B8A9B8</code>, <code>H328A8672EA1EE3</code></p>
+<p><strong>Observable behaviour.</strong> Chips move one way across the whole period, and they move by B paying A off rather than
+by B folding: in the listed hands B calls down or bets into A and loses the pot (B −69 and A +74 in one,
+B −188 and A +195 in another). Gross flow is one-directional over 222 hands, which is the rarest shape in the
+data; a symmetric win-rate between two players of similar strength is the norm.</p>
+<p><strong>Benign alternative.</strong> B may simply be the weaker player. A calling station who pays off a stronger regular for
+200+ hands produces exactly this one-way flow, and the two happen to be seated together for most of the period.
+Losing 399 bb over 222 hands is a perfectly ordinary bad run for a loose-passive style.</p>
+<p><strong>What would overturn it.</strong> If B loses at a similar rate to the other 28 players at the table, the directedness
+disappears and this is just a losing player.</p>
+<hr />
+<h2>Case 2 of 5 · soft play · pair <code>PC178304F6F93</code></h2>
+<p><strong>Players:</strong> <code>U2B73D38F0F64</code> (A), <code>U54EBF17596CB</code> (B) · 195 shared hands · net A +46 bb, B +200 bb
+<strong>Evidence hands:</strong> <code>HF745A6904D873E</code>, <code>H22311A667D6951</code>, <code>H3965E8228C0661</code>, <code>H8EEE93EC74FFB5</code>, <code>H90FC271477B452</code></p>
+<p><strong>Observable behaviour.</strong> When these two are the only players left in a pot, aggression between them stops. In
+the listed hands A only ever calls B's bet and never raises, and no raise between the partners appears anywhere
+in the hand. In one of them A holds 100% equity at the moment of the call and still does not raise. Across
+planted soft-play hands in the labelled data a raise-back between partners appears in only 1.8% of hands, against
+a much higher rate for the same players against everyone else.</p>
+<p><strong>Benign alternative.</strong> Pot control with a medium-strength holding is correct poker. Two tight-passive players
+seated together will naturally produce many low-aggression shared pots, and flat-calling rather than raising out
+of position is standard. The 100%-equity call is only visible because we can see both hands.</p>
+<p><strong>What would overturn it.</strong> If A's raise rate facing B matches A's raise rate facing the rest of the table, this
+is a passive style rather than a directed one.</p>
+<hr />
+<h2>Case 3 of 5 · coordinated isolation · pair <code>P88F46B09F1D2</code></h2>
+<p><strong>Players:</strong> <code>UA7C9B1557591</code> (A), <code>UFC3467ABF7FB</code> (B) · 231 shared hands · net A +181 bb, B −63 bb
+<strong>Evidence hands:</strong> <code>HA0B5BC8A1D70CD</code>, <code>H7ADA9BC5C64558</code>, <code>H6D0600BDF290CD</code>, <code>H3B9ADE5F4DD8B7</code>, <code>H23A864724614E6</code></p>
+<p><strong>Observable behaviour.</strong> The pair opens the pot with a raise that the population makes in under 2% of that exact
+spot (same position, same number of prior raisers and callers, same hand class), with the partner still to act
+behind. In every listed hand the pair's first preflop raise comes before anyone has folded, which is the exact
+condition the host uses to mark a type-1 coordinated-isolation event. The effect is to clear the field and leave
+the two of them heads-up against one outsider.</p>
+<p><strong>Benign alternative.</strong> A loose-aggressive player opens far wider than the population average, and any two
+aggressive players seated together will mechanically squeeze the table and generate frequent isolation spots.
+A sub-2% opening frequency is unusual, not impossible, and blind-steal ranges are legitimately very wide.</p>
+<p><strong>What would overturn it.</strong> If A opens equally wide when B has already folded or is not seated, the "partner
+still to act" conditioning is coincidental and this is just an aggressive opener.</p>
+<hr />
+<h2>Case 4 of 5 · directed transfer · pair <code>P8A8E7B5DF6FF</code></h2>
+<p><strong>Players:</strong> <code>U5264E27D18AE</code> (A), <code>U812E0DB2B2FD</code> (B) · 145 shared hands · net A −156 bb, B +126 bb
+<strong>Evidence hands:</strong> <code>H1B3D95F3C4FAC2</code>, <code>HD8893051FF28C9</code>, <code>HAB446445ECC1E1</code>, <code>H306218EB171AAC</code>, <code>HA74C86D575A096</code></p>
+<p><strong>Observable behaviour.</strong> A repeatedly folds to B's aggression while holding the better hand. In
+<code>H1B3D95F3C4FAC2</code> A folds the turn with 64% equity against B's 36%; in another listed hand A folds with 72%
+against 28%. A also flat-calls B's preflop raises in spots where the label-free normal-play policy gives
+P(call) below 0.15. Folding the best hand to the same opponent, repeatedly, while over-calling that opponent
+preflop, is the fold-ahead signature the host marks as a type-1 directed-transfer event.</p>
+<p><strong>Benign alternative.</strong> A cannot see B's cards. Folding 64% equity to a large turn bet is a normal, if tight,
+laydown; the equity edge is only visible to us. Over-calling a specific opponent preflop is consistent with
+tilt or with a read that the opponent is bluffing too often.</p>
+<p><strong>What would overturn it.</strong> If A folds the better hand at a similar rate against all opponents, this is a
+generally over-folding player rather than a directed one.</p>
+<hr />
+<h2>Case 5 of 5 · directed transfer · pair <code>P8E67334B0E04</code></h2>
+<p><strong>Players:</strong> <code>U56785476817A</code> (A), <code>UF5BDAA08411D</code> (B) · 211 shared hands · net A +274 bb, B −444 bb
+<strong>Evidence hands:</strong> <code>HC0F810438324E0</code>, <code>H9F305E58AD5929</code>, <code>HC6F0775882C4AA</code>, <code>H945017B5E5C347</code>, <code>H5FFA82F65F824E</code></p>
+<p><strong>Observable behaviour.</strong> The same fold-ahead shape as Case 4, but at the extreme: B folds the turn holding
+100% equity against A's 0%, and folds the flop in another listed hand with 99% against 1%. These are not close
+decisions. Over 211 shared hands the net flow is 444 bb from B to A, and the folds cluster on hands where B is
+already the certain winner.</p>
+<p><strong>Benign alternative.</strong> Even a 100%-equity fold can be honest if the player misreads the board, for example
+failing to notice a counterfeited two pair or a completed straight on a coordinated runout. A player on tilt,
+or one who has decided an opponent never bluffs, can fold very strong hands repeatedly.</p>
+<p><strong>What would overturn it.</strong> Board-reading errors of this kind should appear against every opponent. If B's folds
+with over 90% equity occur only against A, misreading does not explain the pattern.</p>
+<hr />
+<p><em>The data is synthetic and these are benchmark patterns, not accusations. A high score is a prompt for human
+review, never a finding of guilt.</em></p>
+</body></html>
