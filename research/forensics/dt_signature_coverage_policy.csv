@@ -1,0 +1,7 @@
+sig,coordinated_isolation:ev,coordinated_isolation:nonev,directed_transfer:ev,directed_transfer:nonev,none,soft_play:ev,soft_play:nonev,unknown
+SIG_pfcall_weak,0.0109,0.0045,0.491,0.0365,0.0024,0.0334,0.001,0.0026
+SIG_fold_surpr,0.0022,0.0026,0.171,0.0037,0.0019,0.0844,0.0005,0.002
+SIG_postcall_surpr,0.0,0.0023,0.1697,0.0212,0.0018,0.0111,0.0021,0.0019
+SIG_agg_surpr,0.2967,0.0457,0.109,0.0203,0.0066,0.0665,0.0045,0.0065
+SIG_any_surpr,0.5256,0.0582,0.731,0.0676,0.014,0.3381,0.0184,0.0144
+SIG_policy_union,0.3111,0.0535,0.6855,0.0615,0.012,0.1973,0.0078,0.0124

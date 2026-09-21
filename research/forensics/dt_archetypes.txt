@@ -1,0 +1,120 @@
+===== EVIDENCE pair=P27D0D8DAE097 fam=directed_transfer rank=1 A=1196 B=7256 dev_shared=114
+hand_idx=1635981 seq=981 phase=0 sb/bb=1/2 button_seat=3 dealt=6 sd=0 final_pot=109 board=6h Qd 3d 4s 7s
+   seat0      A stack=  247 ( 123.5bb) 7hTh contrib=   73 net=    36 fold=0 sd=0 won=1.00 final=Pair(4976)
+   seat1  o6160 stack=  148 (  74.0bb) 8s4c contrib=    0 net=     0 fold=1 sd=0 won=0.00 final=Pair(5647)
+   seat2  o4984 stack=  282 ( 141.0bb) TsKh contrib=    0 net=     0 fold=1 sd=0 won=0.00 final=HighCard(6727)
+   seat3  o1669 stack=  153 (  76.5bb) Ks8d contrib=    5 net=    -5 fold=1 sd=0 won=0.00 final=HighCard(6763)
+   seat4      B stack=  395 ( 197.5bb) 5hTd contrib=   29 net=   -29 fold=1 sd=0 won=0.00 final=Straight(1607)
+   seat5  o1997 stack=  199 (  99.5bb) Ac9s contrib=    2 net=    -2 fold=1 sd=0 won=0.00 final=HighCard(6420)
+  -- PRE    active=6
+     # 0      A raise            amt=    5 to=    5 pot=    3 tocall=    2 stack=  247 act=6 odds=0.40 eq=0.19 huVsPartner=0.65
+     # 1  o6160 fold             amt=    0 to=    0 pot=    8 tocall=    5 stack=  148 act=6 odds=0.38 
+     # 2  o4984 fold             amt=    0 to=    0 pot=    8 tocall=    5 stack=  282 act=5 odds=0.38 
+     # 3  o1669 call             amt=    5 to=    5 pot=    8 tocall=    5 stack=  153 act=4 odds=0.38 
+     # 4      B call             amt=    4 to=    5 pot=   13 tocall=    4 stack=  394 act=4 odds=0.24 eq=0.13 huVsPartner=0.35
+     # 5  o1997 fold             amt=    0 to=    2 pot=   17 tocall=    3 stack=  197 act=4 odds=0.15 
+  -- FLOP 6h Qd 3d   active=3
+     # 6      B check            amt=    0 to=    0 pot=   17 tocall=    0 stack=  390 act=3           eq=0.19 huVsPartner=0.29 HighCard
+     # 7      A bet              amt=   10 to=   10 pot=   17 tocall=    0 stack=  242 act=3           eq=0.22 huVsPartner=0.71 HighCard
+     # 8  o1669 fold             amt=    0 to=    0 pot=   27 tocall=   10 stack=  148 act=3 odds=0.27 
+     # 9      B call             amt=   10 to=   10 pot=   27 tocall=   10 stack=  390 act=2 odds=0.27 eq=0.29 HighCard
+  -- TURN 6h Qd 3d 4s   active=2
+     #10      B check            amt=    0 to=    0 pot=   37 tocall=    0 stack=  380 act=2           eq=0.19 HighCard
+     #11      A bet              amt=   14 to=   14 pot=   37 tocall=    0 stack=  232 act=2           eq=0.81 HighCard
+     #12      B call             amt=   14 to=   14 pot=   51 tocall=   14 stack=  380 act=2 odds=0.22 eq=0.19 HighCard
+  -- RIVER 6h Qd 3d 4s 7s   active=2
+     #13      B check            amt=    0 to=    0 pot=   65 tocall=    0 stack=  366 act=2           eq=1.00 Straight
+     #14      A bet              amt=   44 to=   44 pot=   65 tocall=    0 stack=  218 act=2           eq=0.00 Pair
+     #15      B fold             amt=    0 to=    0 pot=  109 tocall=   44 stack=  366 act=2 odds=0.29 eq=1.00 Straight
+
+===== EVIDENCE pair=P0AE72A0C606C fam=directed_transfer rank=2 A=4902 B=6255 dev_shared=138
+hand_idx=223 seq=223 phase=0 sb/bb=2/4 button_seat=5 dealt=6 sd=2 final_pot=754 board=Kh Js 2c 7d 5d
+   seat0 o10170 stack=  476 ( 119.0bb) Jd2d contrib=    2 net=    -2 fold=1 sd=0 won=0.00 final=TwoPair(2920)
+   seat1      B stack=  455 ( 113.8bb) 9h6h contrib=  370 net=  -370 fold=0 sd=1 won=0.00 final=HighCard(6832)
+   seat2  o5757 stack=  817 ( 204.2bb) 6d4d contrib=    0 net=     0 fold=1 sd=0 won=0.00 final=HighCard(6862)
+   seat3  o1525 stack=  703 ( 175.8bb) Ah7h contrib=   12 net=   -12 fold=1 sd=0 won=0.00 final=Pair(4867)
+   seat4      A stack=  370 (  92.5bb) AsQs contrib=  370 net=   384 fold=0 sd=1 won=1.00 final=HighCard(6188)
+   seat5  o6027 stack=  435 ( 108.8bb) Jc8s contrib=    0 net=     0 fold=1 sd=0 won=0.00 final=Pair(4065)
+  -- PRE    active=6
+     # 0  o5757 fold             amt=    0 to=    0 pot=    6 tocall=    4 stack=  817 act=6 odds=0.40 
+     # 1  o1525 raise            amt=   12 to=   12 pot=    6 tocall=    4 stack=  703 act=5 odds=0.40 
+     # 2      A raise            amt=   36 to=   36 pot=   18 tocall=   12 stack=  370 act=5 odds=0.40 eq=0.34 huVsPartner=0.64
+     # 3  o6027 fold             amt=    0 to=    0 pot=   54 tocall=   36 stack=  435 act=5 odds=0.40 
+     # 4 o10170 fold             amt=    0 to=    2 pot=   54 tocall=   34 stack=  474 act=4 odds=0.39 
+     # 5      B call             amt=   32 to=   36 pot=   54 tocall=   32 stack=  451 act=3 odds=0.37 eq=0.26 huVsPartner=0.36
+     # 6  o1525 fold             amt=    0 to=   12 pot=   86 tocall=   24 stack=  691 act=3 odds=0.22 
+  -- FLOP Kh Js 2c   active=2
+     # 7      B bet              amt=   58 to=   58 pot=   86 tocall=    0 stack=  419 act=2           eq=0.21 HighCard
+     # 8      A call             amt=   58 to=   58 pot=  144 tocall=   58 stack=  334 act=2 odds=0.29 eq=0.79 HighCard
+  -- TURN Kh Js 2c 7d   active=2
+     # 9      B check            amt=    0 to=    0 pot=  202 tocall=    0 stack=  361 act=2           eq=0.14 HighCard
+     #10      A bet              amt=  103 to=  103 pot=  202 tocall=    0 stack=  276 act=2           eq=0.86 HighCard
+     #11      B call             amt=  103 to=  103 pot=  305 tocall=  103 stack=  361 act=2 odds=0.25 eq=0.14 HighCard
+  -- RIVER Kh Js 2c 7d 5d   active=2
+     #12      B check            amt=    0 to=    0 pot=  408 tocall=    0 stack=  258 act=2           eq=0.00 HighCard
+     #13      A all_in(ai-raise) amt=  173 to=  173 pot=  408 tocall=    0 stack=  173 act=2           eq=1.00 HighCard
+     #14      B call             amt=  173 to=  173 pot=  581 tocall=  173 stack=  258 act=2 odds=0.23 eq=0.00 HighCard
+
+===== EVIDENCE pair=P05C8D8034969 fam=directed_transfer rank=5 A=751 B=988 dev_shared=142
+hand_idx=1705885 seq=885 phase=0 sb/bb=1/2 button_seat=2 dealt=6 sd=2 final_pot=299 board=8c Ad Jc 8d 5h
+   seat0  o7061 stack=  218 ( 109.0bb) 3sAc contrib=    0 net=     0 fold=1 sd=0 won=0.00 final=TwoPair(2525)
+   seat1  o1834 stack=  185 (  92.5bb) 7sTd contrib=    2 net=    -2 fold=1 sd=0 won=0.00 final=Pair(4665)
+   seat2      A stack=  125 (  62.5bb) Qd7d contrib=  125 net=   128 fold=0 sd=1 won=0.85 final=Pair(4656)
+   seat3  o4575 stack=  382 ( 191.0bb) 7c8s contrib=    1 net=    -1 fold=1 sd=0 won=0.00 final=Trips(2008)
+   seat4      B stack=  204 ( 102.0bb) 3dTh contrib=  171 net=  -125 fold=0 sd=1 won=0.15 final=Pair(4665)
+   seat5  o1211 stack=  373 ( 186.5bb) Jh9c contrib=    0 net=     0 fold=1 sd=0 won=0.00 final=TwoPair(2853)
+  -- PRE    active=6
+     # 0  o1211 fold             amt=    0 to=    0 pot=    3 tocall=    2 stack=  373 act=6 odds=0.40 
+     # 1  o7061 fold             amt=    0 to=    0 pot=    3 tocall=    2 stack=  218 act=5 odds=0.40 
+     # 2  o1834 call             amt=    2 to=    2 pot=    3 tocall=    2 stack=  185 act=4 odds=0.40 
+     # 3      A raise            amt=    5 to=    5 pot=    5 tocall=    2 stack=  125 act=4 odds=0.29 eq=0.49 huVsPartner=0.68
+     # 4  o4575 fold             amt=    0 to=    1 pot=   10 tocall=    4 stack=  381 act=4 odds=0.29 
+     # 5      B call             amt=    3 to=    5 pot=   10 tocall=    3 stack=  202 act=3 odds=0.23 eq=0.21 huVsPartner=0.32
+     # 6  o1834 fold             amt=    0 to=    2 pot=   13 tocall=    3 stack=  183 act=3 odds=0.19 
+  -- FLOP 8c Ad Jc   active=2
+     # 7      B bet              amt=   13 to=   13 pot=   13 tocall=    0 stack=  199 act=2           eq=0.20 HighCard
+     # 8      A raise            amt=   65 to=   65 pot=   26 tocall=   13 stack=  120 act=2 odds=0.33 eq=0.80 HighCard
+     # 9      B call             amt=   52 to=   65 pot=   91 tocall=   52 stack=  186 act=2 odds=0.36 eq=0.20 HighCard
+  -- TURN 8c Ad Jc 8d   active=2
+     #10      B bet              amt=  101 to=  101 pot=  143 tocall=    0 stack=  134 act=2           eq=0.12 Pair
+     #11      A all_in(ai-call)  amt=   55 to=   55 pot=  244 tocall=   55 stack=   55 act=2 odds=0.18 eq=0.88 Pair
+
+===== EVIDENCE pair=P9A6A6BB5C30D fam=directed_transfer rank=1 A=1191 B=11889 dev_shared=161
+hand_idx=1605160 seq=160 phase=0 sb/bb=1/2 button_seat=3 dealt=6 sd=0 final_pot=165 board=
+   seat0 o10562 stack=  192 (  96.0bb) AdQs contrib=   31 net=   -31 fold=1 sd=0 won=0.00 
+   seat1      B stack=  297 ( 148.5bb) Ts8h contrib=  108 net=    57 fold=0 sd=0 won=1.00 
+   seat2   o992 stack=  245 ( 122.5bb) 5d6d contrib=    0 net=     0 fold=1 sd=0 won=0.00 
+   seat3      A stack=  167 (  83.5bb) 9h7s contrib=   12 net=   -12 fold=1 sd=0 won=0.00 
+   seat4 o11073 stack=  177 (  88.5bb) Ah8s contrib=   12 net=   -12 fold=1 sd=0 won=0.00 
+   seat5  o7422 stack=  198 (  99.0bb) 3c2d contrib=    2 net=    -2 fold=1 sd=0 won=0.00 
+  -- PRE    active=6
+     # 0 o10562 raise            amt=    4 to=    4 pot=    3 tocall=    2 stack=  192 act=6 odds=0.40 
+     # 1      B raise            amt=   12 to=   12 pot=    7 tocall=    4 stack=  297 act=6 odds=0.36 eq=0.14 huVsPartner=0.59
+     # 2   o992 fold             amt=    0 to=    0 pot=   19 tocall=   12 stack=  245 act=6 odds=0.39 
+     # 3      A call             amt=   12 to=   12 pot=   19 tocall=   12 stack=  167 act=5 odds=0.39 eq=0.20 huVsPartner=0.41
+     # 4 o11073 call             amt=   11 to=   12 pot=   31 tocall=   11 stack=  176 act=5 odds=0.26 
+     # 5  o7422 fold             amt=    0 to=    2 pot=   42 tocall=   10 stack=  196 act=5 odds=0.19 
+     # 6 o10562 raise            amt=   27 to=   31 pot=   42 tocall=    8 stack=  188 act=4 odds=0.16 
+     # 7      B raise            amt=   96 to=  108 pot=   69 tocall=   19 stack=  285 act=4 odds=0.22 eq=0.20 huVsPartner=0.59
+     # 8      A fold             amt=    0 to=   12 pot=  165 tocall=   96 stack=  155 act=4 odds=0.37 eq=0.24 huVsPartner=0.41
+     # 9 o11073 fold             amt=    0 to=   12 pot=  165 tocall=   96 stack=  165 act=3 odds=0.37 
+     #10 o10562 fold             amt=    0 to=   31 pot=  165 tocall=   77 stack=  161 act=2 odds=0.32
+
+===== EVIDENCE pair=P83F1D549DCA7 fam=directed_transfer rank=2 A=1776 B=3712 dev_shared=87
+hand_idx=761347 seq=1347 phase=0 sb/bb=1/2 button_seat=4 dealt=6 sd=0 final_pot=22 board=8c 9h 3s
+   seat0  o8489 stack=  208 ( 104.0bb) 8s6h contrib=    2 net=    -2 fold=1 sd=0 won=0.00 
+   seat1 o10931 stack=  435 ( 217.5bb) 9s4s contrib=    0 net=     0 fold=1 sd=0 won=0.00 
+   seat2      A stack=  252 ( 126.0bb) 9dKd contrib=    5 net=    -5 fold=1 sd=0 won=0.00 
+   seat3  o5986 stack=  219 ( 109.5bb) 5hKs contrib=    0 net=     0 fold=1 sd=0 won=0.00 
+   seat4  o9096 stack=  179 (  89.5bb) 2hTs contrib=    0 net=     0 fold=1 sd=0 won=0.00 
+   seat5      B stack=  146 (  73.0bb) AdKh contrib=   15 net=     7 fold=0 sd=0 won=1.00 
+  -- PRE    active=6
+     # 0 o10931 fold             amt=    0 to=    0 pot=    3 tocall=    2 stack=  435 act=6 odds=0.40 
+     # 1      A raise            amt=    5 to=    5 pot=    3 tocall=    2 stack=  252 act=5 odds=0.40 eq=0.18 huVsPartner=0.26
+     # 2  o5986 fold             amt=    0 to=    0 pot=    8 tocall=    5 stack=  219 act=5 odds=0.38 
+     # 3  o9096 fold             amt=    0 to=    0 pot=    8 tocall=    5 stack=  179 act=4 odds=0.38 
+     # 4      B call             amt=    4 to=    5 pot=    8 tocall=    4 stack=  145 act=3 odds=0.33 eq=0.46 huVsPartner=0.74
+     # 5  o8489 fold             amt=    0 to=    2 pot=   12 tocall=    3 stack=  206 act=3 odds=0.20 
+  -- FLOP 8c 9h 3s   active=2
+     # 6      B bet              amt=   10 to=   10 pot=   12 tocall=    0 stack=  141 act=2           eq=0.15 HighCard
+     # 7      A fold             amt=    0 to=    0 pot=   22 tocall=   10 stack=  247 act=2 odds=0.31 eq=0.85 Pair

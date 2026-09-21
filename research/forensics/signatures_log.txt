@@ -1,0 +1,91 @@
+shape: (15, 9)
+┌───────────────────────────┬──────────────────────────┬─────────────────────────────┬──────────────────────┬─────────────────────────┬────────┬──────────────┬─────────────────┬─────────┐
+│ sig                       ┆ coordinated_isolation:ev ┆ coordinated_isolation:nonev ┆ directed_transfer:ev ┆ directed_transfer:nonev ┆ none   ┆ soft_play:ev ┆ soft_play:nonev ┆ unknown │
+│ ---                       ┆ ---                      ┆ ---                         ┆ ---                  ┆ ---                     ┆ ---    ┆ ---          ┆ ---             ┆ ---     │
+│ str                       ┆ f64                      ┆ f64                         ┆ f64                  ┆ f64                     ┆ f64    ┆ f64          ┆ f64             ┆ f64     │
+╞═══════════════════════════╪══════════════════════════╪═════════════════════════════╪══════════════════════╪═════════════════════════╪════════╪══════════════╪═════════════════╪═════════╡
+│ SIG_flow                  ┆ 0.4391                   ┆ 0.2134                      ┆ 1.0                  ┆ 0.1893                  ┆ 0.1565 ┆ 0.837        ┆ 0.1895          ┆ 0.1575  │
+│ SIG_flow_last2            ┆ 0.2304                   ┆ 0.1048                      ┆ 0.7876               ┆ 0.0983                  ┆ 0.0649 ┆ 0.5744       ┆ 0.0658          ┆ 0.0653  │
+│ SIG_fold_vs_partner       ┆ 0.4065                   ┆ 0.1651                      ┆ 0.7393               ┆ 0.1014                  ┆ 0.108  ┆ 0.4747       ┆ 0.0877          ┆ 0.1085  │
+│ SIG_fold_best50           ┆ 0.1522                   ┆ 0.0465                      ┆ 0.611                ┆ 0.031                   ┆ 0.0202 ┆ 0.3307       ┆ 0.0157          ┆ 0.02    │
+│ SIG_fold_best50_post      ┆ 0.0283                   ┆ 0.0109                      ┆ 0.5448               ┆ 0.0195                  ┆ 0.0073 ┆ 0.2959       ┆ 0.011           ┆ 0.0073  │
+│ SIG_fold_best70_post      ┆ 0.0217                   ┆ 0.0079                      ┆ 0.4621               ┆ 0.0147                  ┆ 0.0054 ┆ 0.2627       ┆ 0.008           ┆ 0.0057  │
+│ SIG_call_vs_partner       ┆ 0.0652                   ┆ 0.0317                      ┆ 0.8331               ┆ 0.0721                  ┆ 0.0237 ┆ 0.3339       ┆ 0.022           ┆ 0.0252  │
+│ SIG_call_weak25           ┆ 0.0087                   ┆ 0.0119                      ┆ 0.3172               ┆ 0.0422                  ┆ 0.0111 ┆ 0.1203       ┆ 0.0099          ┆ 0.0118  │
+│ SIG_call_below_odds       ┆ 0.0152                   ┆ 0.015                       ┆ 0.4455               ┆ 0.0479                  ┆ 0.0129 ┆ 0.1503       ┆ 0.0106          ┆ 0.0137  │
+│ SIG_call_weak15_turnriver ┆ 0.0043                   ┆ 0.007                       ┆ 0.1697               ┆ 0.0275                  ┆ 0.0059 ┆ 0.0649       ┆ 0.0047          ┆ 0.0059  │
+│ SIG_bluff_into_partner30  ┆ 0.0826                   ┆ 0.0279                      ┆ 0.1903               ┆ 0.0308                  ┆ 0.013  ┆ 0.1994       ┆ 0.0152          ┆ 0.0133  │
+│ SIG_union                 ┆ 0.237                    ┆ 0.0791                      ┆ 0.8966               ┆ 0.0825                  ┆ 0.0391 ┆ 0.6139       ┆ 0.0377          ┆ 0.0396  │
+│ SIG_anyconf               ┆ 0.4239                   ┆ 0.1814                      ┆ 1.0                  ┆ 0.1498                  ┆ 0.119  ┆ 0.8006       ┆ 0.1108          ┆ 0.1197  │
+│ SIG_strong                ┆ 0.0261                   ┆ 0.0149                      ┆ 0.6234               ┆ 0.0422                  ┆ 0.0114 ┆ 0.3275       ┆ 0.0127          ┆ 0.0117  │
+│ SIG_gift5                 ┆ 0.1174                   ┆ 0.0409                      ┆ 0.7903               ┆ 0.0665                  ┆ 0.0185 ┆ 0.3797       ┆ 0.0184          ┆ 0.019   │
+└───────────────────────────┴──────────────────────────┴─────────────────────────────┴──────────────────────┴─────────────────────────┴────────┴──────────────┴─────────────────┴─────────┘
+DT evidence: donor=player_1(A) 386 donor=player_2(B) 339 no flow 0
+pairs with both donor directions among evidence: 0 / 148 | pairs donor A: 79 donor B: 69
+shape: (3, 2)
+┌───────────────────────┬────────────────────┐
+│ behavior_family       ┆ inferred_donor_acc │
+│ ---                   ┆ ---                │
+│ str                   ┆ f64                │
+╞═══════════════════════╪════════════════════╡
+│ coordinated_isolation ┆ 0.592593           │
+│ soft_play             ┆ 0.686441           │
+│ directed_transfer     ┆ 0.972973           │
+└───────────────────────┴────────────────────┘
+shape: (12, 4)
+┌───────────────────────┬───────────┬──────┬──────────────────────┐
+│ behavior_family       ┆ gift_bin  ┆ len  ┆ same_dir_as_evidence │
+│ ---                   ┆ ---       ┆ ---  ┆ ---                  │
+│ str                   ┆ cat       ┆ u32  ┆ f64                  │
+╞═══════════════════════╪═══════════╪══════╪══════════════════════╡
+│ coordinated_isolation ┆ (-inf, 0] ┆ 878  ┆ 0.138                │
+│ coordinated_isolation ┆ (0, 5]    ┆ 988  ┆ 0.138                │
+│ coordinated_isolation ┆ (20, inf] ┆ 168  ┆ 0.19                 │
+│ coordinated_isolation ┆ (5, 20]   ┆ 275  ┆ 0.185                │
+│ directed_transfer     ┆ (-inf, 0] ┆ 1310 ┆ 0.418                │
+│ directed_transfer     ┆ (0, 5]    ┆ 830  ┆ 0.539                │
+│ directed_transfer     ┆ (20, inf] ┆ 802  ┆ 0.858                │
+│ directed_transfer     ┆ (5, 20]   ┆ 357  ┆ 0.784                │
+│ soft_play             ┆ (-inf, 0] ┆ 1929 ┆ 0.445                │
+│ soft_play             ┆ (0, 5]    ┆ 649  ┆ 0.476                │
+│ soft_play             ┆ (20, inf] ┆ 100  ┆ 0.42                 │
+│ soft_play             ┆ (5, 20]   ┆ 177  ┆ 0.452                │
+└───────────────────────┴───────────┴──────┴──────────────────────┘
+shape: (31, 8)
+┌──────────────────────┬──────────┬───────┬────────────────┬───────┬───────┬───────┬────────┐
+│ grp                  ┆ is_donor ┆ atype ┆ facing_partner ┆ len   ┆ eq_hu ┆ odds  ┆ street │
+│ ---                  ┆ ---      ┆ ---   ┆ ---            ┆ ---   ┆ ---   ┆ ---   ┆ ---    │
+│ str                  ┆ bool     ┆ str   ┆ bool           ┆ u32   ┆ f64   ┆ f64   ┆ f64    │
+╞══════════════════════╪══════════╪═══════╪════════════════╪═══════╪═══════╪═══════╪════════╡
+│ directed_transfer:ev ┆ false    ┆ agg   ┆ false          ┆ 1484  ┆ 0.55  ┆ 0.153 ┆ 0.87   │
+│ directed_transfer:ev ┆ false    ┆ agg   ┆ true           ┆ 126   ┆ 0.76  ┆ 0.299 ┆ 1.16   │
+│ directed_transfer:ev ┆ false    ┆ call  ┆ false          ┆ 10    ┆ 0.668 ┆ 0.222 ┆ 1.5    │
+│ directed_transfer:ev ┆ false    ┆ call  ┆ true           ┆ 176   ┆ 0.702 ┆ 0.279 ┆ 1.34   │
+│ directed_transfer:ev ┆ false    ┆ check ┆ false          ┆ 142   ┆ 0.49  ┆ 0.0   ┆ 1.37   │
+│ directed_transfer:ev ┆ true     ┆ agg   ┆ false          ┆ 298   ┆ 0.27  ┆ 0.108 ┆ 1.25   │
+│ directed_transfer:ev ┆ true     ┆ agg   ┆ true           ┆ 9     ┆ 0.462 ┆ 0.273 ┆ 1.0    │
+│ directed_transfer:ev ┆ true     ┆ call  ┆ false          ┆ 11    ┆ 0.334 ┆ 0.22  ┆ 1.55   │
+│ directed_transfer:ev ┆ true     ┆ call  ┆ true           ┆ 1055  ┆ 0.292 ┆ 0.297 ┆ 0.69   │
+│ directed_transfer:ev ┆ true     ┆ check ┆ false          ┆ 425   ┆ 0.571 ┆ 0.0   ┆ 1.45   │
+│ directed_transfer:ev ┆ true     ┆ fold  ┆ false          ┆ 4     ┆ 0.084 ┆ 0.292 ┆ 1.75   │
+│ directed_transfer:ev ┆ true     ┆ fold  ┆ true           ┆ 536   ┆ 0.714 ┆ 0.305 ┆ 1.3    │
+│ none                 ┆ null     ┆ agg   ┆ false          ┆ 17621 ┆ 0.629 ┆ 0.343 ┆ 0.1    │
+│ none                 ┆ null     ┆ agg   ┆ true           ┆ 538   ┆ 0.542 ┆ 0.288 ┆ 0.4    │
+│ none                 ┆ null     ┆ call  ┆ false          ┆ 830   ┆ 0.529 ┆ 0.24  ┆ 1.56   │
+│ none                 ┆ null     ┆ call  ┆ true           ┆ 1912  ┆ 0.435 ┆ 0.275 ┆ 0.45   │
+│ none                 ┆ null     ┆ check ┆ false          ┆ 2856  ┆ 0.482 ┆ 0.0   ┆ 1.32   │
+│ none                 ┆ null     ┆ fold  ┆ false          ┆ 1681  ┆ 0.482 ┆ 0.281 ┆ 1.33   │
+│ none                 ┆ null     ┆ fold  ┆ true           ┆ 12581 ┆ 0.351 ┆ 0.322 ┆ 0.05   │
+│ none                 ┆ false    ┆ agg   ┆ false          ┆ 24514 ┆ 0.672 ┆ 0.224 ┆ 0.53   │
+│ none                 ┆ false    ┆ agg   ┆ true           ┆ 3062  ┆ 0.662 ┆ 0.286 ┆ 0.56   │
+│ none                 ┆ false    ┆ call  ┆ false          ┆ 530   ┆ 0.715 ┆ 0.245 ┆ 1.57   │
+│ none                 ┆ false    ┆ call  ┆ true           ┆ 4434  ┆ 0.594 ┆ 0.272 ┆ 0.79   │
+│ none                 ┆ false    ┆ check ┆ false          ┆ 3998  ┆ 0.664 ┆ 0.0   ┆ 1.44   │
+│ none                 ┆ true     ┆ agg   ┆ false          ┆ 6485  ┆ 0.381 ┆ 0.219 ┆ 0.69   │
+│ none                 ┆ true     ┆ agg   ┆ true           ┆ 1399  ┆ 0.378 ┆ 0.288 ┆ 0.65   │
+│ none                 ┆ true     ┆ call  ┆ false          ┆ 399   ┆ 0.268 ┆ 0.232 ┆ 1.69   │
+│ none                 ┆ true     ┆ call  ┆ true           ┆ 5842  ┆ 0.288 ┆ 0.275 ┆ 0.85   │
+│ none                 ┆ true     ┆ check ┆ false          ┆ 6164  ┆ 0.29  ┆ 0.0   ┆ 1.49   │
+│ none                 ┆ true     ┆ fold  ┆ false          ┆ 451   ┆ 0.28  ┆ 0.264 ┆ 1.39   │
+│ none                 ┆ true     ┆ fold  ┆ true           ┆ 19284 ┆ 0.339 ┆ 0.274 ┆ 0.45   │
+└──────────────────────┴──────────┴───────┴────────────────┴───────┴───────┴───────┴────────┘

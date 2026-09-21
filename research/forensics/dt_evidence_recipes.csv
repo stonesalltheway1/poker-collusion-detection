@@ -1,0 +1,16 @@
+recipe,devMAP5_DT
+"gift (flow donor EV gift, desc)",0.2733521021021021
+transfer desc,0.1919481981981982
+candidates(anyconf & inferred donor & transfer>=2) earliest-first,0.5083858858858858
+S1 raw,0.3945626876876877
+S1 p>0.05 earliest-first,0.5225018768768769
+S1 p>0.35 earliest-first,0.5003284534534534
+S1 soft time-decay p*exp(-K/2),0.5101482732732732
+S1 soft time-decay p*exp(-K/4),0.4970176426426426
+S1 soft time-decay p*exp(-K/8),0.47902214714714714
+S2 raw,0.5253678678678678
+S2 p>0.05 earliest-first,0.5151426426426426
+S2 p>0.35 earliest-first,0.5381606606606606
+S2 soft time-decay p*exp(-K/2),0.5543768768768768
+S2 soft time-decay p*exp(-K/4),0.5527327327327327
+S2 soft time-decay p*exp(-K/8),0.5474399399399399

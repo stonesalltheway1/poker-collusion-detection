@@ -1,0 +1,21 @@
+S1 top features (gain): [('x_s_pfcall', 27902), ('transfer', 15676), ('x_eq_fold_max', 7808), ('x_gift_max', 3742), ('y_s_max', 2440), ('y_s_sum', 2396), ('x_s_sum', 2089), ('x_s_max', 1874), ('x_s_fold', 1761), ('pfX', 1546), ('stackX', 1389), ('x_s_postcall', 1284), ('y_eq_agg_min', 1256), ('x_gift', 1130), ('contY', 1092)]
+S1: hand AUC DT-evidence vs negative-pair hands 0.9983; vs same-pair non-evidence 0.9826
+S2: hand AUC DT-evidence vs negative-pair hands 0.9977; vs same-pair non-evidence 0.9865
+shape: (15, 2)
+┌─────────────────────────────────┬────────────┐
+│ recipe                          ┆ devMAP5_DT │
+│ ---                             ┆ ---        │
+│ str                             ┆ f64        │
+╞═════════════════════════════════╪════════════╡
+│ gift (flow donor EV gift, desc… ┆ 0.273352   │
+│ transfer desc                   ┆ 0.191948   │
+│ candidates(anyconf & inferred … ┆ 0.508386   │
+│ S1 raw                          ┆ 0.394563   │
+│ S1 p>0.05 earliest-first        ┆ 0.522502   │
+│ …                               ┆ …          │
+│ S2 p>0.05 earliest-first        ┆ 0.515143   │
+│ S2 p>0.35 earliest-first        ┆ 0.538161   │
+│ S2 soft time-decay p*exp(-K/2)  ┆ 0.554377   │
+│ S2 soft time-decay p*exp(-K/4)  ┆ 0.552733   │
+│ S2 soft time-decay p*exp(-K/8)  ┆ 0.54744    │
+└─────────────────────────────────┴────────────┘

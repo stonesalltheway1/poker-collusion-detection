@@ -1,0 +1,61 @@
+event,definition,dev_excess,eval_excess,neg_max_flagged,best_fam_recall
+third_folds_pair,"X aggr facing 3rd, Y active | the 3rd folds to X",136.5,8,3,0.43
+mw_checkthrough,"postflop street w/ actions, X,Y active at start, >=3 active | no aggression (symmetric)",27.0,9,0,0.0
+both_sd,both see flop | both at showdown (symmetric),24.0,24,2,0.22
+hu_checkdown,"HU postflop street X,Y only active | street checked through (symmetric)",20.0,22,0,0.09
+pre_both_vol,shared | both voluntarily in preflop (symmetric),15.5,11,5,0.61
+pf_3bet_Yraise,X faces Y raise pf | X raises,15.0,3,1,0.18
+pf_overcall_3rd_Yin,"X faces 3rd raise pf, Y vol in and active | X calls",12.0,0,0,0.4
+coleave,X leaves after this hand | Y leaves too,11.0,0,0,0.0
+imp5,shared | Mazrooei impact of X actions on Y >= 5bb,10.0,9,2,0.74
+cojoin,X newly seated this hand | Y newly seated too,5.0,2,0,0.0
+mw_fold_3rd_eq60,same | X folds with HU eq vs bettor >= .6,5.0,0,0,0.01
+pf_squeeze_3rd_Yin,same | X raises,5.0,0,0,0.07
+hu_raise,X postflop faces Y bet HU | X raises,4.0,17,0,0.05
+allin_Yactive,X aggr all-in any street with Y active | 1 (count over shared),3.0,67,14,0.46
+flow,shared | X net<0 and Y net>0,3.0,0,3,0.22
+limp_first,"X first pf decision unraised, nobody in | X limps",1.0,0,1,0.61
+foldeq50_Yactive,X folds postflop with Y active | X multiway eq >= .5,1.0,0,1,0.11
+pf_enter_afterY,X first pf decision with Y already voluntarily in | X enters,1.0,1,0,0.32
+hu_smallbet,X bets HU vs Y postflop | size <= .35 pot,1.0,1,0,0.01
+inf_raise_Ystrong,"same, Y top15% | X raises",1.0,11,0,0.01
+pf_allin,shared | X all-in preflop,1.0,1,3,0.01
+gift_to_Y,X faces Y aggr | X fold with eq*(pot+tc)-tc>=2bb or call with amt-eq*(pot+amt)>=2bb,1.0,2,3,0.74
+fold_Ybehind,"same, X HU eq vs Y >= .65 | X folds",0.0,0,0,0.0
+inf_fold_Yweak,"same, Y bottom50% | X folds",0.0,0,0,0.0
+betfold_Y,X aggr then faces Y raise same street | X folds,0.0,0,0,0.0
+blind_fold_steal,X in blind faces Y unopened late open (no callers) | X folds,0.0,0,0,0.0
+bhp_fold_Yworse,"same, HU pf eq X>.55 | X folds",0.0,0,0,0.0
+hu_strongcheck,"X postflop to_call=0 hs>=.8, HU vs Y | X checks",0.0,0,0,0.02
+pf_vol,shared | X voluntarily enters preflop,0.0,1,0,0.16
+mw_strongcheck,"X postflop to_call=0 hs>=.8, Y + 3rd active | X checks",0.0,0,0,0.0
+pf_fold_Yraise,X faces Y raise pf | X folds,0.0,0,0,0.0
+flow_big,shared | X net<=-10bb and Y net>=10bb,0.0,10,4,0.7
+mw_bet_Yactive,"X postflop to_call=0, Y active, >=3 active | X bets",0.0,0,0,0.0
+bhp_fold_Ybetter,"X first pf decision before Y, X top40%, HU pf eq X<.45 vs Y | X folds",0.0,0,0,0.0
+pf_raise,shared | X raises preflop,0.0,0,1,0.2
+inf_fold_Ystrong,"X first pf decision (to_call>0) before Y acts, Y top15% | X folds",0.0,0,0,0.0
+bvb_walk,"X SB folded to, Y BB | X folds (walk to Y)",0.0,0,0,0.0
+steal_open_Yblind,"X CO/BTN/SB folded to, Y in blind to act | X raises",0.0,0,0,0.01
+pf_iso_overY,"X first pf decision, unraised, Y limped | X raises",0.0,2,0,0.01
+call_Yallin,X faces Y all-in | X calls,0.0,0,0,0.0
+pump_Yahead,"X postflop decision, Y + 3rd active, X eq vs Y <= .25 | X aggr",0.0,0,0,0.01
+pf_limpbehind,"X first pf decision, unraised, Y limped | X calls",0.0,2,3,0.2
+mw_fold_3rd,"X postflop faces 3rd bet, Y active | X folds",0.0,0,0,0.0
+fold_Yahead,"X postflop faces 3rd bet, Y active, X HU eq vs Y <= .35 | X folds",0.0,0,0,0.0
+mw_call_3rd,same | X calls,0.0,0,0,0.0
+sd_win_vsY,both at showdown | X net>0 and Y net<0,0.0,0,0,0.0
+pf_call_Yraise,X faces Y raise pf | X calls,0.0,5,0,0.68
+bvb_raise,"X SB folded to, Y BB | X raises",0.0,0,0,0.0
+pf_fold_3rd_Ybehind,"X faces 3rd raise pf, Y still to act | X folds",0.0,0,0,0.0
+pf_fold_first_Yin,"X first pf decision, Y vol in | X folds",0.0,0,0,0.0
+mw_raise_3rd,same | X raises,0.0,0,0,0.01
+mw_bigbet,X aggr postflop with Y + 3rd active | amount >= pot,0.0,0,0,0.01
+hu_bet,X postflop to_call=0 HU vs Y | X bets,0.0,0,0,0.0
+aggr_Ybehind,"X postflop decision, Y + 3rd active, X eq vs Y >= .75 | X aggr",0.0,0,0,0.0
+pf_raise_first_Yin,"X first pf decision, Y vol in | X raises",0.0,0,1,0.14
+pf_fold_3rd_Yin,same | X folds,0.0,0,0,0.0
+pot3_Ywins,"X contrib>=3bb, 3rd contrib>=3bb, Y vol | X net<0 and Y net>0",0.0,0,1,0.01
+hu_fold,X postflop faces Y bet HU | X folds,0.0,0,0,0.0
+foldpost_Ysd,both see flop | X folds postflop and Y goes to showdown,0.0,0,0,0.0
+inf_raise_Yweak,"same, Y bottom50% | X raises",0.0,0,1,0.32

@@ -1,0 +1,13 @@
+states 0 47s
+states 60000 95s
+states 120000 145s
+states 180000 194s
+states 240000 240s
+states 300000 288s
+states 360000 335s
+states 420000 363s
+Training until validation scores don't improve for 30 rounds
+[100]	valid_0's multi_logloss: 0.55921
+Early stopping, best iteration is:
+[112]	valid_0's multi_logloss: 0.559196
+done 4218308 436s

@@ -1,0 +1,11 @@
+recipe,map5,map5_with_minus3q
+random,0.0258,0.0305
+S_U1 (binary),0.1983,0.2443
+S_PL (binary),0.2129,0.2819
+llr_sum,0.2611,0.2709
+llr_post,0.2903,0.2681
+RULE: 10*PL + 4*max_miss + 1.5*strong_check + n_call_resp + 0.3*llr_post,0.4361,0.4787
+"LGBM hand ranker trained within SP pairs (listed vs unlisted), OOF table folds",0.5505,0.5606
+"LGBM hand ranker trained on all positive pairs (3 families), OOF",0.5575,0.5658
+LGBM within SP + timeline position q as feature,0.6381,
+LGBM SP evidence vs NEG hands (planted-vs-normal detector),0.4089,0.3836

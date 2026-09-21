@@ -1,0 +1,103 @@
+=== 1. hand-level signature rates (fraction of pair-hands) ===
+shape: (21, 9)
+┌─────────────────────────────┬──────────┬──────────┬──────────┬──────────┬──────────┬──────────┬──────────┬──────────┐
+│ column                      ┆ SP_ev    ┆ SP_non   ┆ NEG_non  ┆ UNK_non  ┆ DT_ev    ┆ CI_ev    ┆ DT_non   ┆ CI_non   │
+│ ---                         ┆ ---      ┆ ---      ┆ ---      ┆ ---      ┆ ---      ┆ ---      ┆ ---      ┆ ---      │
+│ str                         ┆ f64      ┆ f64      ┆ f64      ┆ f64      ┆ f64      ┆ f64      ┆ f64      ┆ f64      │
+╞═════════════════════════════╪══════════╪══════════╪══════════╪══════════╪══════════╪══════════╪══════════╪══════════╡
+│ S_G0_no_first_fold          ┆ 1.0      ┆ 0.263291 ┆ 0.219242 ┆ 0.221626 ┆ 1.0      ┆ 0.934783 ┆ 0.272138 ┆ 0.320702 │
+│ S_G1_both_enter             ┆ 0.976266 ┆ 0.203823 ┆ 0.10019  ┆ 0.102121 ┆ 0.948966 ┆ 0.495652 ┆ 0.169354 ┆ 0.168577 │
+│ S_faced_partner_aggr        ┆ 0.987342 ┆ 0.170306 ┆ 0.198925 ┆ 0.20143  ┆ 1.0      ┆ 0.919565 ┆ 0.25429  ┆ 0.303789 │
+│ S_no_raise_vs_partner       ┆ 0.982595 ┆ 0.994491 ┆ 0.979857 ┆ 0.979694 ┆ 0.835862 ┆ 0.636957 ┆ 0.967805 ┆ 0.921627 │
+│ S_PL                        ┆ 0.946203 ┆ 0.10533  ┆ 0.05973  ┆ 0.061619 ┆ 0.784828 ┆ 0.117391 ┆ 0.119311 ┆ 0.07329  │
+│ S_strong_check_pact         ┆ 0.458861 ┆ 0.045331 ┆ 0.007888 ┆ 0.00812  ┆ 0.172414 ┆ 0.013043 ┆ 0.010445 ┆ 0.009427 │
+│ S_check_pact_hs60           ┆ 0.552215 ┆ 0.060994 ┆ 0.013711 ┆ 0.014144 ┆ 0.30069  ┆ 0.017391 ┆ 0.020258 ┆ 0.016359 │
+│ S_fold_to_partner_post      ┆ 0.504747 ┆ 0.056282 ┆ 0.033809 ┆ 0.035231 ┆ 0.645517 ┆ 0.078261 ┆ 0.050617 ┆ 0.043346 │
+│ S_fold_to_partner_post_hs60 ┆ 0.316456 ┆ 0.010088 ┆ 0.008118 ┆ 0.008348 ┆ 0.484138 ┆ 0.017391 ┆ 0.016987 ┆ 0.010074 │
+│ S_call_partner_post_hs80    ┆ 0.205696 ┆ 0.012809 ┆ 0.0073   ┆ 0.007287 ┆ 0.092414 ┆ 0.006522 ┆ 0.016241 ┆ 0.010166 │
+│ S_call_partner_pre_eq55     ┆ 0.381329 ┆ 0.02011  ┆ 0.023939 ┆ 0.024787 ┆ 0.193103 ┆ 0.078261 ┆ 0.032023 ┆ 0.036044 │
+│ S_fold_to_partner_pre       ┆ 0.049051 ┆ 0.078051 ┆ 0.144586 ┆ 0.144961 ┆ 0.093793 ┆ 0.734783 ┆ 0.123099 ┆ 0.226525 │
+│ S_hu_checked_street         ┆ 0.330696 ┆ 0.024955 ┆ 0.008907 ┆ 0.009435 ┆ 0.107586 ┆ 0.023913 ┆ 0.00924  ┆ 0.014787 │
+│ S_both_see_flop             ┆ 0.93038  ┆ 0.149731 ┆ 0.0572   ┆ 0.058771 ┆ 0.891034 ┆ 0.108696 ┆ 0.120689 ┆ 0.068946 │
+│ S_missed_raise30            ┆ 0.411392 ┆ 0.020508 ┆ 0.02474  ┆ 0.024501 ┆ 0.224828 ┆ 0.071739 ┆ 0.031506 ┆ 0.035952 │
+│ S_U1                        ┆ 0.81962  ┆ 0.095573 ┆ 0.041255 ┆ 0.04265  ┆ 0.724138 ┆ 0.086957 ┆ 0.067891 ┆ 0.053327 │
+│ S_llr_gt2                   ┆ 0.756329 ┆ 0.119533 ┆ 0.021263 ┆ 0.02109  ┆ 0.517241 ┆ 0.13913  ┆ 0.054921 ┆ 0.036599 │
+│ S_llr_gt4                   ┆ 0.495253 ┆ 0.05376  ┆ 0.004983 ┆ 0.004667 ┆ 0.190345 ┆ 0.032609 ┆ 0.017504 ┆ 0.010444 │
+│ S_PL_and_U1                 ┆ 0.794304 ┆ 0.075795 ┆ 0.03274  ┆ 0.03408  ┆ 0.61931  ┆ 0.043478 ┆ 0.054175 ┆ 0.037893 │
+│ S_PL_and_softresp           ┆ 0.881329 ┆ 0.081171 ┆ 0.039223 ┆ 0.040731 ┆ 0.663448 ┆ 0.058696 ┆ 0.065882 ┆ 0.04658  │
+│ n_hands                     ┆ 632.0    ┆ 15067.0  ┆ 178620.0 ┆ 311091.0 ┆ 725.0    ┆ 460.0    ┆ 17425.0  ┆ 10820.0  │
+└─────────────────────────────┴──────────┴──────────┴──────────┴──────────┴──────────┴──────────┴──────────┴──────────┘
+=== 1b. action shares (post=1 rows require partner active; sb = strength bin: postflop hs*5, preflop (pre_eq-0.3)/0.1) -> sp_action_shares.csv
+role asymmetry [passive responder (call/fold facing partner aggression)]: pairs=129 mean dominant-role share=0.668 vs 50/50 expectation 0.668
+role asymmetry [chip winner]: pairs=126 mean dominant-role share=0.698 vs 50/50 expectation 0.700
+player_1 share of passive responses in SP evidence: 0.516
+mean net chips per SP evidence hand: player_1 0.1, player_2 5.0
+=== 3. temporal ===
+SP: evidence position within pair shared-hand timeline, deciles: [95, 102, 86, 69, 69, 54, 43, 42, 41, 31] mean q=0.393
+SP: evidence hand_seq deciles over dev 0..2999: [78, 98, 87, 73, 66, 61, 37, 52, 42, 38]
+SP: spearman(chronological order, evidence_rank) mean=0.372
+SP: S_PL rate (all shared hands incl. evidence) by pair-timeline quintile: [0.1416, 0.1434, 0.1452, 0.1332, 0.1323]
+DT: evidence position within pair shared-hand timeline, deciles: [136, 102, 93, 90, 68, 63, 63, 46, 38, 26] mean q=0.376
+DT: evidence hand_seq deciles over dev 0..2999: [95, 93, 119, 89, 65, 62, 67, 47, 50, 38]
+DT: spearman(chronological order, evidence_rank) mean=0.436
+DT: S_PL rate (all shared hands incl. evidence) by pair-timeline quintile: [0.1508, 0.1458, 0.1499, 0.1428, 0.14]
+CI: evidence position within pair shared-hand timeline, deciles: [88, 83, 75, 62, 57, 32, 34, 15, 7, 7] mean q=0.316
+CI: evidence hand_seq deciles over dev 0..2999: [91, 67, 69, 58, 52, 29, 41, 25, 22, 6]
+CI: spearman(chronological order, evidence_rank) mean=0.912
+CI: S_PL rate (all shared hands incl. evidence) by pair-timeline quintile: [0.0732, 0.0669, 0.0674, 0.0887, 0.0794]
+NEG: S_PL rate by quintile: [0.0596, 0.0594, 0.0589, 0.0597, 0.061]
+SP non-evidence S_PL rate by hand_seq distance to nearest evidence hand: {(1, 10): (5957, np.float64(0.0995)), (11, 30): (2195, np.float64(0.1125)), (31, 100): (1325, np.float64(0.1057)), (101, 300): (1929, np.float64(0.1006)), (301, 1000): (2672, np.float64(0.1171)), (1001, 3000): (989, np.float64(0.1011))}
+SP pairs: mean dev shared hands 118.9; S_PL hands 16.55; NEG-rate expectation 7.10; excess (~planted) 9.45; listed evidence that are S_PL 4.53
+SP split-half S_PL rate (excl evidence) corr=0.278; 1st half 0.0928 2nd half 0.1122
+=== 5. pair-level separability ===
+shape: (18, 8)
+┌───────────────────────┬───────────┬───────────┬────────────────┬──────────┬──────────┬───────────┬───────────┐
+│ feature               ┆ SP_vs_NEG ┆ SP_vs_UNK ┆ SP_vs_UNKclean ┆ SP_vs_DT ┆ SP_vs_CI ┆ DT_vs_NEG ┆ CI_vs_NEG │
+│ ---                   ┆ ---       ┆ ---       ┆ ---            ┆ ---      ┆ ---      ┆ ---       ┆ ---       │
+│ str                   ┆ f64       ┆ f64       ┆ f64            ┆ f64      ┆ f64      ┆ f64       ┆ f64       │
+╞═══════════════════════╪═══════════╪═══════════╪════════════════╪══════════╪══════════╪═══════════╪═══════════╡
+│ n                     ┆ 0.4985    ┆ 0.596     ┆ 0.601          ┆ 0.4671   ┆ 0.4548   ┆ 0.531     ┆ 0.5395    │
+│ r_S_PL                ┆ 0.9029    ┆ 0.9011    ┆ 0.8975         ┆ 0.4841   ┆ 0.8485   ┆ 0.8982    ┆ 0.5841    │
+│ z_S_PL                ┆ 0.903     ┆ 0.9119    ┆ 0.9091         ┆ 0.4868   ┆ 0.844    ┆ 0.8993    ┆ 0.5911    │
+│ r_S_U1                ┆ 0.9451    ┆ 0.9396    ┆ 0.9379         ┆ 0.7185   ┆ 0.8854   ┆ 0.8668    ┆ 0.5774    │
+│ z_S_U1                ┆ 0.9434    ┆ 0.9473    ┆ 0.9461         ┆ 0.7117   ┆ 0.8857   ┆ 0.8676    ┆ 0.58      │
+│ r_S_both_see_flop     ┆ 0.9531    ┆ 0.9518    ┆ 0.9493         ┆ 0.6655   ┆ 0.925    ┆ 0.9097    ┆ 0.5727    │
+│ z_S_both_see_flop     ┆ 0.9518    ┆ 0.9578    ┆ 0.9559         ┆ 0.6601   ┆ 0.9237   ┆ 0.91      ┆ 0.5762    │
+│ r_S_llr_gt2           ┆ 0.9844    ┆ 0.9851    ┆ 0.984          ┆ 0.8874   ┆ 0.9666   ┆ 0.9054    ┆ 0.755     │
+│ z_S_llr_gt2           ┆ 0.9836    ┆ 0.9869    ┆ 0.9861         ┆ 0.878    ┆ 0.9654   ┆ 0.9065    ┆ 0.7578    │
+│ r_S_strong_check_pact ┆ 0.9825    ┆ 0.9779    ┆ 0.9777         ┆ 0.9433   ┆ 0.9776   ┆ 0.7382    ┆ 0.5335    │
+│ z_S_strong_check_pact ┆ 0.9811    ┆ 0.9804    ┆ 0.9801         ┆ 0.9385   ┆ 0.9732   ┆ 0.7391    ┆ 0.5315    │
+│ r_S_G1_both_enter     ┆ 0.9259    ┆ 0.9262    ┆ 0.9242         ┆ 0.6629   ┆ 0.7283   ┆ 0.8652    ┆ 0.8235    │
+│ z_S_G1_both_enter     ┆ 0.9249    ┆ 0.9356    ┆ 0.9338         ┆ 0.6644   ┆ 0.728    ┆ 0.8658    ┆ 0.8219    │
+│ top5_llr              ┆ 0.9909    ┆ 0.9926    ┆ 0.9926         ┆ 0.9233   ┆ 0.9705   ┆ 0.9235    ┆ 0.7767    │
+│ mean_llr              ┆ 0.9517    ┆ 0.9503    ┆ 0.9492         ┆ 0.8318   ┆ 0.8885   ┆ 0.8156    ┆ 0.7459    │
+│ top5_miss             ┆ 0.6984    ┆ 0.7519    ┆ 0.7573         ┆ 0.4713   ┆ 0.5128   ┆ 0.7281    ┆ 0.6948    │
+│ neg_raise_resp_rate   ┆ 0.8324    ┆ 0.8311    ┆ 0.8281         ┆ 0.8374   ┆ 0.9942   ┆ 0.5582    ┆ 0.0669    │
+│ neg_raise_p_per_both  ┆ 0.9356    ┆ 0.927     ┆ 0.9255         ┆ 0.9517   ┆ 0.9998   ┆ 0.553     ┆ 0.0431    │
+└───────────────────────┴───────────┴───────────┴────────────────┴──────────┴──────────┴───────────┴───────────┘
+mean dev shared hands: SP 118.9 NEG 120.0 UNK 103.7 UNKclean 102.9
+shared in (0,91]: SP 45 NEG 499 UNKc 1298 | AUC vs NEG: z_S_PL 0.905 c_S_PL 0.903 z_S_llr_gt2 0.980 top5_llr 0.988 | vs UNKc top5_llr 0.992
+shared in (91,128]: SP 43 NEG 493 UNKc 596 | AUC vs NEG: z_S_PL 0.877 c_S_PL 0.873 z_S_llr_gt2 0.981 top5_llr 0.998 | vs UNKc top5_llr 0.999
+shared in (128,1000000000]: SP 44 NEG 496 UNKc 783 | AUC vs NEG: z_S_PL 0.924 c_S_PL 0.902 z_S_llr_gt2 0.990 top5_llr 0.998 | vs UNKc top5_llr 0.999
+=== 6. evidence ranking (proxy MAP@5 on dev shared hands of SP pairs; random = see first row) ===
+shape: (10, 3)
+┌─────────────────────────────────┬────────┬───────────────────┐
+│ recipe                          ┆ map5   ┆ map5_with_minus3q │
+│ ---                             ┆ ---    ┆ ---               │
+│ str                             ┆ f64    ┆ f64               │
+╞═════════════════════════════════╪════════╪═══════════════════╡
+│ random                          ┆ 0.0258 ┆ 0.0305            │
+│ S_U1 (binary)                   ┆ 0.1983 ┆ 0.2443            │
+│ S_PL (binary)                   ┆ 0.2129 ┆ 0.2819            │
+│ llr_sum                         ┆ 0.2611 ┆ 0.2709            │
+│ llr_post                        ┆ 0.2903 ┆ 0.2681            │
+│ RULE: 10*PL + 4*max_miss + 1.5… ┆ 0.4361 ┆ 0.4787            │
+│ LGBM hand ranker trained withi… ┆ 0.5505 ┆ 0.5606            │
+│ LGBM hand ranker trained on al… ┆ 0.5575 ┆ 0.5658            │
+│ LGBM within SP + timeline posi… ┆ 0.6381 ┆ null              │
+│ LGBM SP evidence vs NEG hands … ┆ 0.4089 ┆ 0.3836            │
+└─────────────────────────────────┴────────┴───────────────────┘
+hand AUC llr_sum: SP_ev vs NEG 0.9798 | SP_ev vs SP_non 0.9219
+hand AUC llr_post: SP_ev vs NEG 0.7376 | SP_ev vs SP_non 0.7250
+hand AUC llr_pre: SP_ev vs NEG 0.9711 | SP_ev vs SP_non 0.8973
+hand AUC max_miss: SP_ev vs NEG 0.9574 | SP_ev vs SP_non 0.9591

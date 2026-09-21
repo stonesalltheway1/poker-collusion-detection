@@ -1,0 +1,15 @@
+# Versions used to produce the submitted results (Python 3.13.3, Windows 11).
+# The XGBoost stages were trained on a CUDA GPU (GTX 1660S); set XGB_DEVICE=cpu to run without one
+# (the numbers shift slightly, and that must be disclosed if you report them).
+polars==1.39.3
+pandas>=2.2
+numpy>=2.0
+pyarrow>=17.0
+duckdb>=1.1
+numba==0.61.2
+lightgbm==4.6.0
+xgboost==3.0.0
+catboost>=1.2          # exp_cb_pairmodel.py only; not part of either selected submission
+scikit-learn>=1.5
+matplotlib>=3.9        # scripts/make_figures.py only
+torch                  # src/seqmodel.py only; not part of either selected submission

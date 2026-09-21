@@ -1,0 +1,141 @@
+--- hand HC87612371A8222 idx=217345 seq=2345 [EVIDENCE SP pair=P049F7CE27361 rank=3 llr_sum=11.10 max_miss=0.38 PL=True U1=True] blinds 2/4 btn_seat=3 board=Ts Jd 7c 7s 6h final_pot=298 sd=2
+  seat0  o1 3h2h stack=  390 contrib=    0 net=     0 fold=1 sd=0 won=0.00 final=pair
+  seat1  o2 2dQs stack=  498 contrib=    0 net=     0 fold=1 sd=0 won=0.00 final=pair
+  seat2  o3 Qc4c stack=  509 contrib=   34 net=   -34 fold=1 sd=0 won=0.00 final=pair
+  seat3   B Td8h stack=  634 contrib=  130 net=  -130 fold=0 sd=1 won=0.00 final=2pair
+  seat4   A 7h8c stack=  475 contrib=  130 net=   168 fold=0 sd=1 won=1.00 final=trips
+  seat5  o4 6sJc stack=  494 contrib=    4 net=    -4 fold=1 sd=0 won=0.00 final=2pair
+  [PRE] 
+     o1 fold   amt=    0 to=    0 pot=    6 stk=  390 tocall=    4 active=6
+     o2 fold   amt=    0 to=    0 pot=    6 stk=  498 tocall=    4 active=5
+     o3 raise  amt=   10 to=   10 pot=    6 stk=  509 tocall=    4 active=4
+      B call   amt=   10 to=   10 pot=   16 stk=  634 tocall=   10 active=4
+      A call   amt=    8 to=   10 pot=   26 stk=  473 tocall=    8 active=4
+     o4 fold   amt=    0 to=    4 pot=   34 stk=  490 tocall=    6 active=4
+  [FLOP] Ts Jd 7c
+      A check  amt=    0 to=    0 pot=   34 stk=  465 tocall=    0 active=3
+     o3 check  amt=    0 to=    0 pot=   34 stk=  499 tocall=    0 active=3
+      B check  amt=    0 to=    0 pot=   34 stk=  624 tocall=    0 active=3
+  [TURN] Ts Jd 7c 7s
+      A check  amt=    0 to=    0 pot=   34 stk=  465 tocall=    0 active=3
+     o3 bet    amt=   24 to=   24 pot=   34 stk=  499 tocall=    0 active=3
+      B raise  amt=  120 to=  120 pot=   58 stk=  624 tocall=   24 active=3
+      A call   amt=  120 to=  120 pot=  178 stk=  465 tocall=  120 active=3
+     o3 fold   amt=    0 to=   24 pot=  298 stk=  475 tocall=   96 active=3
+  [RIVER] Ts Jd 7c 7s 6h
+      A check  amt=    0 to=    0 pot=  298 stk=  345 tocall=    0 active=2
+      B check  amt=    0 to=    0 pot=  298 stk=  504 tocall=    0 active=2
+
+--- hand H5BFF709DC36AFA idx=1681103 seq=1103 [EVIDENCE SP pair=P375F7CE38E9E rank=3 llr_sum=1.52 max_miss=0.88 PL=False U1=False] blinds 2/4 btn_seat=1 board= final_pot=20 sd=0
+  seat0   B TdJc stack=  447 contrib=   10 net=    10 fold=0 sd=0 won=1.00 final=
+  seat1   A QhQc stack=  527 contrib=    0 net=     0 fold=1 sd=0 won=0.00 final=
+  seat2  o1 5s8d stack=  580 contrib=    2 net=    -2 fold=1 sd=0 won=0.00 final=
+  seat3  o2 7hAs stack=  474 contrib=    4 net=    -4 fold=1 sd=0 won=0.00 final=
+  seat4  o3 Kc6s stack=  255 contrib=    4 net=    -4 fold=1 sd=0 won=0.00 final=
+  seat5  o4 8h9d stack=  373 contrib=    0 net=     0 fold=1 sd=0 won=0.00 final=
+  [PRE] 
+     o3 call   amt=    4 to=    4 pot=    6 stk=  255 tocall=    4 active=6
+     o4 fold   amt=    0 to=    0 pot=   10 stk=  373 tocall=    4 active=6
+      B raise  amt=   10 to=   10 pot=   10 stk=  447 tocall=    4 active=5
+      A fold   amt=    0 to=    0 pot=   20 stk=  527 tocall=   10 active=5
+     o1 fold   amt=    0 to=    2 pot=   20 stk=  578 tocall=    8 active=4
+     o2 fold   amt=    0 to=    4 pot=   20 stk=  470 tocall=    6 active=3
+     o3 fold   amt=    0 to=    4 pot=   20 stk=  251 tocall=    6 active=2
+
+--- hand HA532C1A81DF5BC idx=80215 seq=215 [EVIDENCE SP pair=P53106F59AE8A rank=5 llr_sum=7.23 max_miss=0.32 PL=True U1=True] blinds 2/4 btn_seat=4 board=4c Ah 2h Js Ad final_pot=78 sd=2
+  seat0  o1 8d2d stack=  163 contrib=    4 net=    -4 fold=1 sd=0 won=0.00 final=2pair
+  seat1  o2 9d3c stack=  942 contrib=    0 net=     0 fold=1 sd=0 won=0.00 final=pair
+  seat2  o3 6hKs stack=  356 contrib=    0 net=     0 fold=1 sd=0 won=0.00 final=pair
+  seat3  o4 7sJh stack=  480 contrib=    0 net=     0 fold=1 sd=0 won=0.00 final=2pair
+  seat4   A 2cKh stack=  586 contrib=   37 net=   -37 fold=0 sd=1 won=0.00 final=2pair
+  seat5   B AcQs stack=  361 contrib=   37 net=    41 fold=0 sd=1 won=1.00 final=trips
+  [PRE] 
+     o2 fold   amt=    0 to=    0 pot=    6 stk=  942 tocall=    4 active=6
+     o3 fold   amt=    0 to=    0 pot=    6 stk=  356 tocall=    4 active=5
+     o4 fold   amt=    0 to=    0 pot=    6 stk=  480 tocall=    4 active=4
+      A call   amt=    4 to=    4 pot=    6 stk=  586 tocall=    4 active=3
+      B call   amt=    2 to=    4 pot=   10 stk=  359 tocall=    2 active=3
+     o1 check  amt=    0 to=    4 pot=   12 stk=  159 tocall=    0 active=3
+  [FLOP] 4c Ah 2h
+      B check  amt=    0 to=    0 pot=   12 stk=  357 tocall=    0 active=3
+     o1 check  amt=    0 to=    0 pot=   12 stk=  159 tocall=    0 active=3
+      A bet    amt=    9 to=    9 pot=   12 stk=  582 tocall=    0 active=3
+      B call   amt=    9 to=    9 pot=   21 stk=  357 tocall=    9 active=3
+     o1 fold   amt=    0 to=    0 pot=   30 stk=  159 tocall=    9 active=3
+  [TURN] 4c Ah 2h Js
+      B check  amt=    0 to=    0 pot=   30 stk=  348 tocall=    0 active=2
+      A bet    amt=   24 to=   24 pot=   30 stk=  573 tocall=    0 active=2
+      B call   amt=   24 to=   24 pot=   54 stk=  348 tocall=   24 active=2
+  [RIVER] 4c Ah 2h Js Ad
+      B check  amt=    0 to=    0 pot=   78 stk=  324 tocall=    0 active=2
+      A check  amt=    0 to=    0 pot=   78 stk=  549 tocall=    0 active=2
+
+--- hand H067FA4AFCA9CEF idx=1641303 seq=1303 [EVIDENCE SP pair=PA357524DE19A rank=4 llr_sum=3.44 max_miss=0.39 PL=True U1=True] blinds 1/2 btn_seat=4 board=7d 6s 5c 9s 9c final_pot=11 sd=2
+  seat0  o1 Qh3s stack=  237 contrib=    2 net=    -2 fold=1 sd=0 won=0.00 final=pair
+  seat1  o2 3h4d stack=  205 contrib=    0 net=     0 fold=1 sd=0 won=0.00 final=str
+  seat2   B KdKh stack=  182 contrib=    4 net=     7 fold=0 sd=1 won=1.00 final=2pair
+  seat3  o3 2c7c stack=  285 contrib=    0 net=     0 fold=1 sd=0 won=0.00 final=2pair
+  seat4   A JhAd stack=  147 contrib=    4 net=    -4 fold=0 sd=1 won=0.00 final=pair
+  seat5  o4 2s6h stack=  357 contrib=    1 net=    -1 fold=1 sd=0 won=0.00 final=2pair
+  [PRE] 
+     o2 fold   amt=    0 to=    0 pot=    3 stk=  205 tocall=    2 active=6
+      B raise  amt=    4 to=    4 pot=    3 stk=  182 tocall=    2 active=5
+     o3 fold   amt=    0 to=    0 pot=    7 stk=  285 tocall=    4 active=5
+      A call   amt=    4 to=    4 pot=    7 stk=  147 tocall=    4 active=4
+     o4 fold   amt=    0 to=    1 pot=   11 stk=  356 tocall=    3 active=4
+     o1 fold   amt=    0 to=    2 pot=   11 stk=  235 tocall=    2 active=3
+  [FLOP] 7d 6s 5c
+      B check  amt=    0 to=    0 pot=   11 stk=  178 tocall=    0 active=2
+      A check  amt=    0 to=    0 pot=   11 stk=  143 tocall=    0 active=2
+  [TURN] 7d 6s 5c 9s
+      B check  amt=    0 to=    0 pot=   11 stk=  178 tocall=    0 active=2
+      A check  amt=    0 to=    0 pot=   11 stk=  143 tocall=    0 active=2
+  [RIVER] 7d 6s 5c 9s 9c
+      B check  amt=    0 to=    0 pot=   11 stk=  178 tocall=    0 active=2
+      A check  amt=    0 to=    0 pot=   11 stk=  143 tocall=    0 active=2
+
+--- hand H13B5DD9B5BB68A idx=437522 seq=2522 [EVIDENCE SP pair=PA4A4744909BA rank=2 llr_sum=6.45 max_miss=0.32 PL=True U1=True] blinds 5/10 btn_seat=4 board=7c 2h Ks 5c final_pot=406 sd=0
+  seat0  o1 QcKc stack=  789 contrib=   30 net=   -30 fold=1 sd=0 won=0.00 final=pair
+  seat1  o2 9dTd stack=  438 contrib=    0 net=     0 fold=1 sd=0 won=0.00 final=high
+  seat2  o3 KhAh stack= 1096 contrib=   90 net=   -90 fold=1 sd=0 won=0.00 final=pair
+  seat3  o4 6d3d stack=  634 contrib=    0 net=     0 fold=1 sd=0 won=0.00 final=high
+  seat4   A 2dKd stack= 1288 contrib=   90 net=   -90 fold=1 sd=0 won=0.00 final=2pair
+  seat5   B 9cJd stack=  979 contrib=  196 net=   210 fold=0 sd=0 won=1.00 final=high
+  [PRE] 
+     o2 fold   amt=    0 to=    0 pot=   15 stk=  438 tocall=   10 active=6
+     o3 call   amt=   10 to=   10 pot=   15 stk= 1096 tocall=   10 active=5
+     o4 fold   amt=    0 to=    0 pot=   25 stk=  634 tocall=   10 active=5
+      A call   amt=   10 to=   10 pot=   25 stk= 1288 tocall=   10 active=4
+      B call   amt=    5 to=   10 pot=   35 stk=  974 tocall=    5 active=4
+     o1 raise  amt=   20 to=   30 pot=   40 stk=  779 tocall=    0 active=4
+     o3 raise  amt=   80 to=   90 pot=   60 stk= 1086 tocall=   20 active=4
+      A call   amt=   80 to=   90 pot=  140 stk= 1278 tocall=   80 active=4
+      B call   amt=   80 to=   90 pot=  220 stk=  969 tocall=   80 active=4
+     o1 fold   amt=    0 to=   30 pot=  300 stk=  759 tocall=   60 active=4
+  [FLOP] 7c 2h Ks
+      B check  amt=    0 to=    0 pot=  300 stk=  889 tocall=    0 active=3
+     o3 check  amt=    0 to=    0 pot=  300 stk= 1006 tocall=    0 active=3
+      A check  amt=    0 to=    0 pot=  300 stk= 1198 tocall=    0 active=3
+  [TURN] 7c 2h Ks 5c
+      B bet    amt=  106 to=  106 pot=  300 stk=  889 tocall=    0 active=3
+     o3 fold   amt=    0 to=    0 pot=  406 stk= 1006 tocall=  106 active=3
+      A fold   amt=    0 to=    0 pot=  406 stk= 1198 tocall=  106 active=2
+
+--- hand HCDF38FB6CD488F idx=1241166 seq=1166 [EVIDENCE SP pair=PE60E87200AA1 rank=5 llr_sum=1.48 max_miss=0.05 PL=True U1=True] blinds 5/10 btn_seat=4 board=6s 7c Qd final_pot=80 sd=0
+  seat0  o1 3cKs stack=  553 contrib=   10 net=   -10 fold=1 sd=0 won=0.00 final=high
+  seat1  o2 Qc6d stack=  900 contrib=    0 net=     0 fold=1 sd=0 won=0.00 final=2pair
+  seat2  o3 9s4d stack= 1783 contrib=    0 net=     0 fold=1 sd=0 won=0.00 final=high
+  seat3  o4 Th8s stack= 1384 contrib=    0 net=     0 fold=1 sd=0 won=0.00 final=high
+  seat4   B 9hTc stack=  925 contrib=   20 net=   -20 fold=1 sd=0 won=0.00 final=high
+  seat5   A KcJs stack= 1421 contrib=   50 net=    30 fold=0 sd=0 won=1.00 final=high
+  [PRE] 
+     o2 fold   amt=    0 to=    0 pot=   15 stk=  900 tocall=   10 active=6
+     o3 fold   amt=    0 to=    0 pot=   15 stk= 1783 tocall=   10 active=5
+     o4 fold   amt=    0 to=    0 pot=   15 stk= 1384 tocall=   10 active=4
+      B call   amt=   10 to=   10 pot=   15 stk=  925 tocall=   10 active=3
+      A raise  amt=   15 to=   20 pot=   25 stk= 1416 tocall=    5 active=3
+     o1 fold   amt=    0 to=   10 pot=   40 stk=  543 tocall=   10 active=3
+      B call   amt=   10 to=   20 pot=   40 stk=  915 tocall=   10 active=2
+  [FLOP] 6s 7c Qd
+      A bet    amt=   30 to=   30 pot=   50 stk= 1401 tocall=    0 active=2
+      B fold   amt=    0 to=    0 pot=   80 stk=  905 tocall=   30 active=2

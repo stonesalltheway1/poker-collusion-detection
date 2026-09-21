@@ -1,0 +1,96 @@
+--- hand_idx 545545 seq 545 bb 2 button 0 pot 8 (4.0bb) dealt 6 sd 0 board  pair P2B6AAE81BAE9 evidence_rank 3
+   seat0  o1 Td9s stack  224.5bb contrib    0.0 net    +0.0 fold=1 sd=0 won=0.00 
+   seat1  o2 8s2s stack  162.0bb contrib    0.5 net    -0.5 fold=1 sd=0 won=0.00 
+   seat2  o3 5c3d stack  152.5bb contrib    1.0 net    -1.0 fold=1 sd=0 won=0.00 
+   seat3   A 2h6d stack   83.0bb contrib    2.5 net    +1.5 fold=0 sd=0 won=1.00 
+   seat4  o4 8h7d stack   98.5bb contrib    0.0 net    +0.0 fold=1 sd=0 won=0.00 
+   seat5   B 8d7s stack  120.0bb contrib    0.0 net    +0.0 fold=1 sd=0 won=0.00 
+     PRE     A raise  amt    2.5 to    2.5 pot    1.5 tocall   1.0 stk   83.0 act 6
+     PRE    o4 fold   amt    0.0 to    0.0 pot    4.0 tocall   2.5 stk   98.5 act 6
+     PRE     B fold   amt    0.0 to    0.0 pot    4.0 tocall   2.5 stk  120.0 act 5
+     PRE    o1 fold   amt    0.0 to    0.0 pot    4.0 tocall   2.5 stk  224.5 act 4
+     PRE    o2 fold   amt    0.0 to    0.5 pot    4.0 tocall   2.0 stk  161.5 act 3
+     PRE    o3 fold   amt    0.0 to    1.0 pot    4.0 tocall   1.5 stk  151.5 act 2
+--- hand_idx 1806911 seq 1911 bb 4 button 2 pot 293 (73.2bb) dealt 6 sd 0 board  pair P3AA5044D5AD9 evidence_rank 4
+   seat0   A KsTd stack  116.2bb contrib   54.2 net   +19.0 fold=0 sd=0 won=1.00 
+   seat1   B 8h2h stack   97.5bb contrib   15.5 net   -15.5 fold=1 sd=0 won=0.00 
+   seat2  o1 9d2c stack  122.5bb contrib    0.0 net    +0.0 fold=1 sd=0 won=0.00 
+   seat3  o2 4c3h stack  173.2bb contrib    0.5 net    -0.5 fold=1 sd=0 won=0.00 
+   seat4  o3 3dTh stack  120.0bb contrib    1.0 net    -1.0 fold=1 sd=0 won=0.00 
+   seat5  o4 JsQh stack   95.0bb contrib    2.0 net    -2.0 fold=1 sd=0 won=0.00 
+     PRE    o4 raise  amt    2.0 to    2.0 pot    1.5 tocall   1.0 stk   95.0 act 6
+     PRE     A raise  amt    6.0 to    6.0 pot    3.5 tocall   2.0 stk  116.2 act 6
+     PRE     B raise  amt   15.5 to   15.5 pot    9.5 tocall   6.0 stk   97.5 act 6
+     PRE    o1 fold   amt    0.0 to    0.0 pot   25.0 tocall  15.5 stk  122.5 act 6
+     PRE    o2 fold   amt    0.0 to    0.5 pot   25.0 tocall  15.0 stk  172.8 act 5
+     PRE    o3 fold   amt    0.0 to    1.0 pot   25.0 tocall  14.5 stk  119.0 act 4
+     PRE    o4 fold   amt    0.0 to    2.0 pot   25.0 tocall  13.5 stk   93.0 act 3
+     PRE     A raise  amt   48.2 to   54.2 pot   25.0 tocall   9.5 stk  110.2 act 2
+     PRE     B fold   amt    0.0 to   15.5 pot   73.2 tocall  38.8 stk   82.0 act 2
+--- hand_idx 1025565 seq 565 bb 4 button 2 pot 284 (71.0bb) dealt 6 sd 0 board 6s 3h 8h pair P990D3C0B4788 evidence_rank 5
+   seat0  o1 JcAc stack  105.0bb contrib    0.0 net    +0.0 fold=1 sd=0 won=0.00 rank@end=6526
+   seat1  o2 5c7h stack   95.8bb contrib    0.0 net    +0.0 fold=1 sd=0 won=0.00 rank@end=7445
+   seat2  o3 QdJs stack   66.8bb contrib   19.5 net   -19.5 fold=1 sd=0 won=0.00 rank@end=7063
+   seat3  o4 3c6d stack  110.5bb contrib    0.5 net    -0.5 fold=1 sd=0 won=0.00 rank@end=3244
+   seat4   B 8d5d stack   94.5bb contrib    7.5 net    -7.5 fold=1 sd=0 won=0.00 rank@end=4857
+   seat5   A AdTs stack   76.5bb contrib   43.5 net   +27.5 fold=0 sd=0 won=1.00 rank@end=6582
+     PRE     A raise  amt    2.5 to    2.5 pot    1.5 tocall   1.0 stk   76.5 act 6
+     PRE    o1 fold   amt    0.0 to    0.0 pot    4.0 tocall   2.5 stk  105.0 act 6
+     PRE    o2 fold   amt    0.0 to    0.0 pot    4.0 tocall   2.5 stk   95.8 act 5
+     PRE    o3 call   amt    2.5 to    2.5 pot    4.0 tocall   2.5 stk   66.8 act 4
+     PRE    o4 fold   amt    0.0 to    0.5 pot    6.5 tocall   2.0 stk  110.0 act 4
+     PRE     B raise  amt    6.5 to    7.5 pot    6.5 tocall   1.5 stk   93.5 act 3
+     PRE     A raise  amt   17.0 to   19.5 pot   13.0 tocall   5.0 stk   74.0 act 3
+     PRE    o3 call   amt   17.0 to   19.5 pot   30.0 tocall  17.0 stk   64.2 act 3
+     PRE     B fold   amt    0.0 to    7.5 pot   47.0 tocall  12.0 stk   87.0 act 3
+     FLOP    A bet    amt   24.0 to   24.0 pot   47.0 tocall   0.0 stk   57.0 act 2
+     FLOP   o3 fold   amt    0.0 to    0.0 pot   71.0 tocall  24.0 stk   47.2 act 2
+--- hand_idx 1502345 seq 2345 bb 10 button 1 pot 195 (19.5bb) dealt 6 sd 0 board  pair P4BD3F5DC8500 evidence_rank 4
+   seat0   A 6cJs stack   96.0bb contrib    0.0 net    +0.0 fold=1 sd=0 won=0.00 
+   seat1  o1 4h7c stack   76.4bb contrib    0.0 net    +0.0 fold=1 sd=0 won=0.00 
+   seat2  o2 Qc8d stack   97.7bb contrib    0.5 net    -0.5 fold=1 sd=0 won=0.00 
+   seat3  o3 As2c stack  169.8bb contrib    1.0 net    -1.0 fold=1 sd=0 won=0.00 
+   seat4  o4 KsQd stack  167.2bb contrib   13.5 net    +6.0 fold=0 sd=0 won=1.00 
+   seat5   B 8s2s stack   64.4bb contrib    4.5 net    -4.5 fold=1 sd=0 won=0.00 
+     PRE    o4 raise  amt    2.0 to    2.0 pot    1.5 tocall   1.0 stk  167.2 act 6
+     PRE     B raise  amt    4.5 to    4.5 pot    3.5 tocall   2.0 stk   64.4 act 6
+     PRE     A fold   amt    0.0 to    0.0 pot    8.0 tocall   4.5 stk   96.0 act 6
+     PRE    o1 fold   amt    0.0 to    0.0 pot    8.0 tocall   4.5 stk   76.4 act 5
+     PRE    o2 fold   amt    0.0 to    0.5 pot    8.0 tocall   4.0 stk   97.2 act 4
+     PRE    o3 fold   amt    0.0 to    1.0 pot    8.0 tocall   3.5 stk  168.8 act 3
+     PRE    o4 raise  amt   11.5 to   13.5 pot    8.0 tocall   2.5 stk  165.2 act 2
+     PRE     B fold   amt    0.0 to    4.5 pot   19.5 tocall   9.0 stk   59.9 act 2
+--- hand_idx 1740015 seq 15 bb 2 button 0 pot 213 (106.5bb) dealt 6 sd 0 board  pair PEF90594978AB evidence_rank 2
+   seat0  o1 Ad5d stack   99.5bb contrib    0.0 net    +0.0 fold=1 sd=0 won=0.00 
+   seat1  o2 8dKd stack  105.0bb contrib   10.5 net   -10.5 fold=1 sd=0 won=0.00 
+   seat2  o3 TcQc stack   90.5bb contrib    1.0 net    -1.0 fold=1 sd=0 won=0.00 
+   seat3  o4 Ah2s stack  201.0bb contrib    1.0 net    -1.0 fold=1 sd=0 won=0.00 
+   seat4   B 6dJh stack  144.0bb contrib   23.5 net   -23.5 fold=1 sd=0 won=0.00 
+   seat5   A 2c5h stack  122.0bb contrib   70.5 net   +36.0 fold=0 sd=0 won=1.00 
+     PRE    o4 call   amt    1.0 to    1.0 pot    1.5 tocall   1.0 stk  201.0 act 6
+     PRE     B raise  amt    3.0 to    3.0 pot    2.5 tocall   1.0 stk  144.0 act 6
+     PRE     A raise  amt   10.5 to   10.5 pot    5.5 tocall   3.0 stk  122.0 act 6
+     PRE    o1 fold   amt    0.0 to    0.0 pot   16.0 tocall  10.5 stk   99.5 act 6
+     PRE    o2 call   amt   10.0 to   10.5 pot   16.0 tocall  10.0 stk  104.5 act 5
+     PRE    o3 fold   amt    0.0 to    1.0 pot   26.0 tocall   9.5 stk   89.5 act 5
+     PRE    o4 fold   amt    0.0 to    1.0 pot   26.0 tocall   9.5 stk  200.0 act 4
+     PRE     B raise  amt   20.5 to   23.5 pot   26.0 tocall   7.5 stk  141.0 act 3
+     PRE     A raise  amt   60.0 to   70.5 pot   46.5 tocall  13.0 stk  111.5 act 3
+     PRE    o2 fold   amt    0.0 to   10.5 pot  106.5 tocall  60.0 stk   94.5 act 3
+     PRE     B fold   amt    0.0 to   23.5 pot  106.5 tocall  47.0 stk  120.5 act 2
+--- hand_idx 1025222 seq 222 bb 4 button 3 pot 46 (11.5bb) dealt 6 sd 0 board Ks 4h Qh pair P990D3C0B4788 evidence_rank 1
+   seat0   B 7hTd stack  249.5bb contrib    8.0 net    +3.5 fold=0 sd=0 won=1.00 rank@end=6729
+   seat1  o1 Kh2d stack   79.5bb contrib    0.0 net    +0.0 fold=1 sd=0 won=0.00 rank@end=3644
+   seat2  o2 Jh6d stack  113.5bb contrib    0.0 net    +0.0 fold=1 sd=0 won=0.00 rank@end=6705
+   seat3  o3 3c8s stack   99.5bb contrib    0.0 net    +0.0 fold=1 sd=0 won=0.00 rank@end=6775
+   seat4  o4 7c5d stack  161.0bb contrib    0.5 net    -0.5 fold=1 sd=0 won=0.00 rank@end=6782
+   seat5   A 6c4d stack  106.8bb contrib    3.0 net    -3.0 fold=1 sd=0 won=0.00 rank@end=5586
+     PRE     B raise  amt    3.0 to    3.0 pot    1.5 tocall   1.0 stk  249.5 act 6
+     PRE    o1 fold   amt    0.0 to    0.0 pot    4.5 tocall   3.0 stk   79.5 act 6
+     PRE    o2 fold   amt    0.0 to    0.0 pot    4.5 tocall   3.0 stk  113.5 act 5
+     PRE    o3 fold   amt    0.0 to    0.0 pot    4.5 tocall   3.0 stk   99.5 act 4
+     PRE    o4 fold   amt    0.0 to    0.5 pot    4.5 tocall   2.5 stk  160.5 act 3
+     PRE     A call   amt    2.0 to    3.0 pot    4.5 tocall   2.0 stk  105.8 act 2
+     FLOP    A check  amt    0.0 to    0.0 pot    6.5 tocall   0.0 stk  103.8 act 2
+     FLOP    B bet    amt    5.0 to    5.0 pot    6.5 tocall   0.0 stk  246.5 act 2
+     FLOP    A fold   amt    0.0 to    0.0 pot   11.5 tocall   5.0 stk  103.8 act 2

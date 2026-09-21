@@ -1,0 +1,18 @@
+EVAL phase: response when facing partner's preflop raise
+shape: (9, 6)
+┌───────────────────────┬──────────┬───────┬───────────┬──────────────┬───────────┐
+│ behavior_family       ┆ role     ┆ len   ┆ call_rate ┆ reraise_rate ┆ fold_rate │
+│ ---                   ┆ ---      ┆ ---   ┆ ---       ┆ ---          ┆ ---       │
+│ str                   ┆ str      ┆ u32   ┆ f64       ┆ f64          ┆ f64       │
+╞═══════════════════════╪══════════╪═══════╪═══════════╪══════════════╪═══════════╡
+│ coordinated_isolation ┆ donor    ┆ 215   ┆ 0.26      ┆ 0.093        ┆ 0.647     │
+│ coordinated_isolation ┆ n/a      ┆ 849   ┆ 0.191     ┆ 0.104        ┆ 0.706     │
+│ coordinated_isolation ┆ receiver ┆ 248   ┆ 0.198     ┆ 0.113        ┆ 0.69      │
+│ directed_transfer     ┆ donor    ┆ 1002  ┆ 0.207     ┆ 0.094        ┆ 0.7       │
+│ directed_transfer     ┆ receiver ┆ 1156  ┆ 0.171     ┆ 0.105        ┆ 0.724     │
+│ none                  ┆ n/a      ┆ 23148 ┆ 0.2       ┆ 0.097        ┆ 0.703     │
+│ soft_play             ┆ donor    ┆ 864   ┆ 0.216     ┆ 0.081        ┆ 0.703     │
+│ soft_play             ┆ n/a      ┆ 200   ┆ 0.175     ┆ 0.135        ┆ 0.69      │
+│ soft_play             ┆ receiver ┆ 822   ┆ 0.217     ┆ 0.079        ┆ 0.704     │
+└───────────────────────┴──────────┴───────┴───────────┴──────────────┴───────────┘
+EVAL-phase pair AUC (max over players of call-rate vs partner preflop raise, >=5 situations) DT vs neg: 0.4761 n [{'behavior_family': 'none', 'len': 1166}, {'behavior_family': 'directed_transfer', 'len': 115}]

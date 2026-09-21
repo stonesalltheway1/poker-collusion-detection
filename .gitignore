@@ -1,0 +1,25 @@
+# competition data is not redistributable: download it from Kaggle
+data/raw/
+data/derived/*
+!data/derived/spies_exp005.parquet
+!data/derived/spies2_exp022.parquet
+
+# generated artefacts
+oof/
+submissions/
+logs/
+catboost_info/
+research/repos/
+research/papers/
+*.zip
+
+__pycache__/
+*.pyc
+.ipynb_checkpoints/
+.DS_Store
+
+# never publish
+*api*key*
+kaggle.json
+scripts/do_droplet.py
+watchdog*.sh
